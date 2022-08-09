@@ -1,0 +1,14 @@
+BasedOnStyle: Google
+IndentWidth: 4
+AccessModifierOffset: -4
+AllowShortFunctionsOnASingleLine: None
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterEnum: true
+  AfterStruct: true
+  AfterUnion: true
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+AlignConsecutiveMacros: true
+AlignOperands: true
+AllowShortIfStatementsOnASingleLine: false
