@@ -4,6 +4,8 @@
 #include <M5Stack.h>
 #elif defined(TARGET_M5STACK_CORE2)
 #include <M5Core2.h>
+#elif defined(TARGET_M5STICK_C)
+#include <M5StickC.h>
 #elif defined(TARGET_M5STICK_C_PLUS)
 #include <M5StickCPlus.h>
 #elif defined(TARGET_M5STACK_ATOM)
