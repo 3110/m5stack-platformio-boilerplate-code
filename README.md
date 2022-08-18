@@ -1,10 +1,10 @@
-# PlatformIO IDE 向け M5Stack 定型コード
+# PlatformIO IDE 向け M5Stack 定型コード環境
 
 [Arduino IDE](https://www.arduino.cc/en/software) 環境のように [PlatformIO IDE](https://platformio.org/platformio-ide) 環境でも `setup()`と`loop()`の中身を書いてすぐにコンパイルして実行できる環境です。
 
 ## 対応機種
 
-| 対応機種                  | 環境名               |
+| 機種名                    | 環境名               |
 | :------------------------ | :------------------- |
 | M5Stack BASIC             | env:m5stack-basic    |
 | M5Stack CORE2             | env:m5stack-core2    |
