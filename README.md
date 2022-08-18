@@ -4,15 +4,15 @@
 
 ## 対応機種
 
-| 対応機種                | 環境名               |
-| :---------------------- | :------------------- |
-| M5Stack BASIC           | env:m5stack-basic    |
-| M5Stack CORE2           | env:m5stack-core2    |
-| M5StickC                | env:m5stack-c        |
-| M5StickC Plus           | env:m5stack-c-plus   |
-| M5ATOM Lite/Matrix/Echo | env:m5stack-atom     |
-| M5Stack CoreInk         | env:m5stack-core-ink |
-| M5Stack Paper           | env:m5stack-paper    |
+| 対応機種                  | 環境名               |
+| :------------------------ | :------------------- |
+| M5Stack BASIC             | env:m5stack-basic    |
+| M5Stack CORE2             | env:m5stack-core2    |
+| M5StickC                  | env:m5stack-c        |
+| M5StickC Plus             | env:m5stack-c-plus   |
+| M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom     |
+| M5Stack CoreInk           | env:m5stack-core-ink |
+| M5Stack Paper             | env:m5stack-paper    |
 
 ## 事前準備
 
