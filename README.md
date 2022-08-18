@@ -1,4 +1,4 @@
-# PlatformIO 環境向け M5Stack 定型コード
+# PlatformIO IDE 向け M5Stack 定型コード
 
 [Arduino IDE](https://www.arduino.cc/en/software) 環境のように [PlatformIO IDE](https://platformio.org/platformio-ide) 環境でも `setup()`と`loop()`の中身を書いてすぐにコンパイルして実行できる環境です。
 
