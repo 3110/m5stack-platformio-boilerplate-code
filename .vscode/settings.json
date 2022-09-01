@@ -25,6 +25,9 @@
         "initializer_list": "cpp"
     },
     "cSpell.words": [
+        "coreink",
+        "mbus",
+        "platformio",
         "Struct"
     ]
 }
