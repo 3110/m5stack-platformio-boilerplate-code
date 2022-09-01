@@ -41,6 +41,8 @@ monitor_port = ${env.upload_port}
 [platformio]
 default_envs = m5stack-basic
 ; default_envs = m5stack-core2
+; default_envs = m5stick-c
+; default_envs = m5stick-c-plus
 ; default_envs = m5stack-atom
 ; default_envs = m5stack-coreink
 ; default_envs = m5stack-paper
