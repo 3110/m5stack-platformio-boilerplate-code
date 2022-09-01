@@ -1,7 +1,7 @@
 #include "main.hpp"
 
 void setup(void) {
-    M5.begin();
+    M5_BEGIN();
 }
 
 void loop(void) {
