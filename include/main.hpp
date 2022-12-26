@@ -31,6 +31,13 @@ inline void M5_BEGIN(bool SerialEnable = true, bool I2CEnable = true,
                      bool DisplayEnable = false) {
     M5.begin(SerialEnable, I2CEnable, DisplayEnable);
 }
+#elif defined(TARGET_M5STACK_ATOMS3)
+#include <M5AtomS3.h>
+
+inline void M5_BEGIN(bool LCDEnable = true, bool SerialEnable = true,
+                     bool I2CEnable = true, bool LEDEnable = false) {
+    M5.begin(LCDEnable, SerialEnable, I2CEnable, LEDEnable);
+}
 #elif defined(TARGET_M5STACK_CORE_INK)
 #include <M5CoreInk.h>
 inline int M5_BEGIN(bool InkEnable = true, bool WireEnable = false,
