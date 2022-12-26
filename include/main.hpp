@@ -30,6 +30,9 @@ inline void M5_BEGIN(bool LCDEnable = true, bool PowerEnable = true,
 inline void M5_BEGIN(bool SerialEnable = true, bool I2CEnable = true,
                      bool DisplayEnable = false) {
     M5.begin(SerialEnable, I2CEnable, DisplayEnable);
+    // https://twitter.com/wakwak_koba/status/1553162622479974400
+    pinMode(0, OUTPUT);
+    digitalWrite(0, LOW);
 }
 #elif defined(TARGET_M5STACK_ATOMS3)
 #include <M5AtomS3.h>
