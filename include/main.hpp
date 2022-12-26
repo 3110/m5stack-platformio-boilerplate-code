@@ -36,7 +36,6 @@ inline void M5_BEGIN(bool SerialEnable = true, bool I2CEnable = true,
 }
 #elif defined(TARGET_M5STACK_ATOMS3)
 #include <M5AtomS3.h>
-
 inline void M5_BEGIN(bool LCDEnable = true, bool SerialEnable = true,
                      bool I2CEnable = true, bool LEDEnable = false) {
     M5.begin(LCDEnable, SerialEnable, I2CEnable, LEDEnable);
