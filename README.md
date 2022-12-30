@@ -4,16 +4,16 @@
 
 ## 対応機種
 
-| 機種名                    | 環境名               |
-| :------------------------ | :------------------- |
-| M5Stack BASIC             | env:m5stack-basic    |
-| M5Stack CORE2             | env:m5stack-core2    |
-| M5StickC                  | env:m5stack-c        |
-| M5StickC Plus             | env:m5stack-c-plus   |
-| M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom     |
-| M5ATOMS3                  | env:m5stack-atoms3   |
-| M5Stack CoreInk           | env:m5stack-core-ink |
-| M5Stack Paper             | env:m5stack-paper    |
+| 機種名                    | 環境名                                               | 備考                                                                                                     |
+| :------------------------ | :--------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| M5Stack BASIC             | env:m5stack-basic                                    |                                                                                                          |
+| M5Stack CORE2             | env:m5stack-core2                                    |                                                                                                          |
+| M5StickC                  | env:m5stack-c                                        |                                                                                                          |
+| M5StickC Plus             | env:m5stack-c-plus                                   |                                                                                                          |
+| M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom                                     |                                                                                                          |
+| M5ATOMS3                  | env:m5stack-atoms3 <br> env:m5stack-atoms3-m5unified | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
+| M5Stack CoreInk           | env:m5stack-core-ink                                 |                                                                                                          |
+| M5Stack Paper             | env:m5stack-paper                                    |                                                                                                          |
 
 ## 事前準備
 
@@ -46,6 +46,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stick-c-plus
 ; default_envs = m5stack-atom
 ; default_envs = m5stack-atoms3
+; default_envs = m5stack-atoms3-m5unified
 ; default_envs = m5stack-coreink
 ; default_envs = m5stack-paper
 ```
