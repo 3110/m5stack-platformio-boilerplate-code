@@ -29,5 +29,8 @@
         "mbus",
         "platformio",
         "Struct"
-    ]
+    ],
+    "markdownlint.config": {
+        "MD033": false, // allow Inline HTML
+    }
 }
