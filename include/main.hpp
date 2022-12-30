@@ -43,6 +43,7 @@ inline void M5_BEGIN(bool LCDEnable = true, bool SerialEnable = true,
 #elif defined(TARGET_M5STACK_ATOMS3_M5UNIFIED)
 // clang-format off
 #include <M5Unified.h>
+#define FASTLED_INTERNAL
 #include <FastLED.h>
 // clang-format on
 inline void M5_BEGIN(void) {
