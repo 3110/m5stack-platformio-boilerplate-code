@@ -11,7 +11,7 @@
 | M5StickC                  | env:m5stack-c                                        |                                                                                                          |
 | M5StickC Plus             | env:m5stack-c-plus                                   |                                                                                                          |
 | M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom                                     |                                                                                                          |
-| M5ATOMS3                  | env:m5stack-atoms3 <br> env:m5stack-atoms3-m5unified | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
+| M5ATOMS3/Lite             | env:m5stack-atoms3 <br> env:m5stack-atoms3-m5unified | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
 | M5Stack CoreInk           | env:m5stack-core-ink                                 |                                                                                                          |
 | M5Stack Paper             | env:m5stack-paper                                    |                                                                                                          |
 
@@ -31,6 +31,8 @@
 upload_port = COM16
 monitor_port = ${env.upload_port}
 ```
+
+※PlatformIO IDE [v3.0.0](https://github.com/platformio/platformio-vscode-ide/releases/tag/v3.0.0)より，ステータスバーからポートの切り替えができるようになりました。
 
 #### 環境名の設定
 
