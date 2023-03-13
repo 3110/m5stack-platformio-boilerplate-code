@@ -40,7 +40,8 @@ inline void M5_BEGIN(bool LCDEnable = true, bool SerialEnable = true,
                      bool I2CEnable = true, bool LEDEnable = false) {
     M5.begin(LCDEnable, SerialEnable, I2CEnable, LEDEnable);
 }
-#elif defined(TARGET_M5STACK_ATOMS3_M5UNIFIED)
+#elif defined(TARGET_M5STACK_ATOMS3_M5UNIFIED) || \
+    defined(TARGET_M5STACK_ATOM_M5UNIFIED)
 // clang-format off
 #include <M5Unified.h>
 #define FASTLED_INTERNAL
