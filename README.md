@@ -10,7 +10,7 @@
 | M5Stack CORE2             | env:m5stack-core2                                    |                                                                                                          |
 | M5StickC                  | env:m5stack-c                                        |                                                                                                          |
 | M5StickC Plus             | env:m5stack-c-plus                                   |                                                                                                          |
-| M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom                                     |                                                                                                          |
+| M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom <br> env:m5stack-atom-m5unified     | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用                         |
 | M5ATOMS3/Lite             | env:m5stack-atoms3 <br> env:m5stack-atoms3-m5unified | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
 | M5Stack CoreInk           | env:m5stack-core-ink                                 |                                                                                                          |
 | M5Stack Paper             | env:m5stack-paper                                    |                                                                                                          |
