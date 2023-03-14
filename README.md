@@ -7,6 +7,8 @@
 | 機種名                    | 環境名                                               | 備考                                                                                                     |
 | :------------------------ | :--------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | M5Stack BASIC             | env:m5stack-basic                                    |                                                                                                          |
+| M5Stack Fire              | env:m5stack-fire                                     |                                                                                                          |
+| M5Stack M5GO              | env:m5stack-m5go                                     |                                                                                                          |
 | M5Stack CORE2             | env:m5stack-core2                                    |                                                                                                          |
 | M5StickC                  | env:m5stack-c                                        |                                                                                                          |
 | M5StickC Plus             | env:m5stack-c-plus                                   |                                                                                                          |
@@ -43,6 +45,8 @@ monitor_port = ${env.upload_port}
 ```platformio.ini
 [platformio]
 default_envs = m5stack-basic
+; default-envs = m5stack-fire
+; default-envs = m5stack-m5go
 ; default_envs = m5stack-core2
 ; default_envs = m5stick-c
 ; default_envs = m5stick-c-plus

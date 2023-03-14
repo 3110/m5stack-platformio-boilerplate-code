@@ -1,6 +1,7 @@
 #pragma once
 
-#if defined(TARGET_M5STACK_BASIC)
+#if defined(TARGET_M5STACK_BASIC) || defined(TARGET_M5STACK_FIRE) || \
+    defined(TARGET_M5STACK_M5GO)
 #include <M5Stack.h>
 inline void M5_BEGIN(bool LCDEnable = true, bool SDEnable = true,
                      bool SerialEnable = true, bool I2CEnable = false) {
