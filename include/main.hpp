@@ -36,6 +36,12 @@ inline void M5_BEGIN(bool LCDEnable = true, bool SDEnable = true,
                      mbus_mode_t mode = kMBusModeOutput) {
     M5.begin(LCDEnable, SDEnable, SerialEnable, I2CEnable, mode);
 }
+#elif defined(ARDUINO_M5STACK_CoreS3)
+#include <M5CoreS3.h>
+inline void M5_BEGIN(bool LCDEnable = true, bool SerialEnable = true,
+                     bool I2CEnable = false) {
+    M5.begin(LCDEnable, SerialEnable, I2CEnable);
+}
 #elif defined(ARDUINO_M5Stick_C)
 #if defined(ARDUINO_M5Stick_C_PLUS)
 #include <M5StickCPlus.h>
