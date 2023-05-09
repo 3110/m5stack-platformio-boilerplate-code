@@ -10,6 +10,7 @@
 | M5Stack Fire              | env:m5stack-fire                                               |                                                                                                          |
 | M5Stack M5GO              | env:m5stack-m5go                                               |                                                                                                          |
 | M5Stack CORE2             | env:m5stack-core2                                              |                                                                                                          |
+| M5Stack CORES3             | env:m5stack-cores3-m5unified                                   | [M5Unified](https://github.com/m5stack/M5Unified) を使用                                                                                                         |
 | M5StickC                  | env:m5stack-c                                                  |                                                                                                          |
 | M5StickC Plus             | env:m5stack-c-plus                                             |                                                                                                          |
 | M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom <br> env:m5stack-atom-m5unified               | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用                         |
@@ -49,6 +50,7 @@ default_envs = m5stack-basic
 ; default-envs = m5stack-fire
 ; default-envs = m5stack-m5go
 ; default_envs = m5stack-core2
+; default_envs = m5stack-cores3-m5unified
 ; default_envs = m5stick-c
 ; default_envs = m5stick-c-plus
 ; default_envs = m5stack-atom
@@ -61,9 +63,20 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-paper
 ```
 
+### 外部ライブラリの追加
+
+外部ライブラリを使用する場合は，`[env]`セクションにある`lib_deps`に追加します。
+
+```
+lib_deps =
+	fastled/FastLED
+```
+
 ### コードの記述
 
 `main.cpp`の`setup()`，`loop()`にコードを書きます。必要なヘッダファイルは`main.hpp`で環境名に合わせて実機に合ったヘッダファイルをインクルードするようにしています。
+
+注意：M5Unified で`SD.h`や`SPIFFS.h`を使用する場合は，`#include "main.hpp"`より前に入れてください。
 
 ### 実機へのアップロード
 
