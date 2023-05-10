@@ -76,7 +76,16 @@ lib_deps =
 
 `main.cpp`の`setup()`，`loop()`にコードを書きます。必要なヘッダファイルは`main.hpp`で環境名に合わせて実機に合ったヘッダファイルをインクルードするようにしています。
 
+各機種で`M5.begin()`の引数がまちまちでわかりにくいので，`M5_BEGIN`というマクロを定義しています。定義内容に関しては`main.hpp`を参照してください。
+
 注意：M5Unified で`SD.h`や`SPIFFS.h`を使用する場合は，`#include "main.hpp"`より前に入れてください。
+
+```c++
+// clang-format off
+#include <SPIFFS.h>
+#include "main.hpp"
+// clang-format on
+```
 
 ### 実機へのアップロード
 
