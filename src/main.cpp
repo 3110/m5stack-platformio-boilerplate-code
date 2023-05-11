@@ -5,5 +5,5 @@ void setup(void) {
 }
 
 void loop(void) {
-    M5.update();
+    M5_UPDATE();
 }

@@ -74,3 +74,9 @@ inline int M5_BEGIN(bool InkEnable = true, bool WireEnable = false,
     return M5.begin(InkEnable, WireEnable, SpeakerEnable);
 }
 #endif
+
+inline void M5_UPDATE(void) {
+#if !defined(ARDUINO_M5STACK_CoreS3)
+    M5.update();
+#endif
+}
