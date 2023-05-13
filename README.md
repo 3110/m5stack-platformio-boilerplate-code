@@ -62,6 +62,8 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-atoms3-lite-m5unified
 ; default_envs = m5stack-coreink
 ; default_envs = m5stack-paper
+; default_envs = m5stack-stamps3
+; default_envs = m5stack-stamps3-m5unified
 ```
 
 ### 外部ライブラリの追加
