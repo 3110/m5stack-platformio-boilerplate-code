@@ -10,7 +10,7 @@
 | M5Stack Fire              | env:m5stack-fire                                               |                                                                                                          |
 | M5Stack M5GO              | env:m5stack-m5go                                               |                                                                                                          |
 | M5Stack CORE2             | env:m5stack-core2                                              |                                                                                                          |
-| M5Stack CORES3             | env:m5stack-cores3-m5unified                                   | [M5Unified](https://github.com/m5stack/M5Unified) を使用                                                                                                         |
+| M5Stack CORES3             | env:m5stack-cores3 <br> env:m5stack-cores3-m5unified          | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
 | M5StickC                  | env:m5stack-c                                                  |                                                                                                          |
 | M5StickC Plus             | env:m5stack-c-plus                                             |                                                                                                          |
 | M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom <br> env:m5stack-atom-m5unified               | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用                         |
@@ -18,6 +18,7 @@
 | M5ATOMS3 Lite             | env:m5stack-atoms3-lite <br> env:m5stack-atoms3-lite-m5unified | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
 | M5Stack CoreInk           | env:m5stack-core-ink                                           |                                                                                                          |
 | M5Stack Paper             | env:m5stack-paper                                              |                                                                                                          |
+| M5StampS3                  | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified           | 公式ライブラリはなし<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
 
 ## 事前準備
 
@@ -67,9 +68,9 @@ default_envs = m5stack-basic
 
 外部ライブラリを使用する場合は，`[env]`セクションにある`lib_deps`に追加します。
 
-```
+```ini
 lib_deps =
-	fastled/FastLED
+    fastled/FastLED
 ```
 
 ### コードの記述
@@ -77,6 +78,7 @@ lib_deps =
 `main.cpp`の`setup()`，`loop()`にコードを書きます。必要なヘッダファイルは`main.hpp`で環境名に合わせて実機に合ったヘッダファイルをインクルードするようにしています。
 
 各機種で`M5.begin()`の引数がまちまちでわかりにくいので，`M5_BEGIN`というマクロを定義しています。定義内容に関しては`main.hpp`を参照してください。
+また，CoreS3の公式ライブラリでは`M5.update()`が定義されていないので，各機種共通で扱えるように`M5_UPDATE`というマクロで吸収しています。
 
 注意：M5Unified で`SD.h`や`SPIFFS.h`を使用する場合は，`#include "main.hpp"`より前に入れてください。
 

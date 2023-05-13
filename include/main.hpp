@@ -73,4 +73,15 @@ inline int M5_BEGIN(bool InkEnable = true, bool WireEnable = false,
                     bool SpeakerEnable = false) {
     return M5.begin(InkEnable, WireEnable, SpeakerEnable);
 }
+#elif defined(ARDUINO_M5Stack_StampS3)
+#include <Arduino.h>
+#include <FastLED.h>
+inline void M5_BEGIN(void) {
+}
 #endif
+
+inline void M5_UPDATE(void) {
+#if !defined(ARDUINO_M5STACK_CoreS3) && !defined(ARDUINO_M5Stack_StampS3)
+    M5.update();
+#endif
+}
