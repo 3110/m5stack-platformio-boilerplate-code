@@ -1,6 +1,8 @@
+[In English](README_en_US.md)
+
 # PlatformIO IDE 向け M5Stack 定型コード環境
 
-[Arduino IDE](https://www.arduino.cc/en/software) 環境のように [PlatformIO IDE](https://platformio.org/platformio-ide) 環境でも `setup()`と`loop()`の中身を書いてすぐにコンパイルして実行できる環境です。
+[Arduino IDE](https://www.arduino.cc/en/software) 環境と同じように [PlatformIO IDE](https://platformio.org/platformio-ide) 環境でも `setup()`と`loop()`の中身を書いてすぐにコンパイルして実行できます。
 
 ## 対応機種
 
@@ -10,7 +12,7 @@
 | M5Stack Fire              | env:m5stack-fire                                               |                                                                                                          |
 | M5Stack M5GO              | env:m5stack-m5go                                               |                                                                                                          |
 | M5Stack CORE2             | env:m5stack-core2                                              |                                                                                                          |
-| M5Stack CORES3             | env:m5stack-cores3 <br> env:m5stack-cores3-m5unified          | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
+| M5Stack CORES3            | env:m5stack-cores3 <br> env:m5stack-cores3-m5unified           | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
 | M5StickC                  | env:m5stack-c                                                  |                                                                                                          |
 | M5StickC Plus             | env:m5stack-c-plus                                             |                                                                                                          |
 | M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom <br> env:m5stack-atom-m5unified               | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用                         |
@@ -18,7 +20,7 @@
 | M5ATOMS3 Lite             | env:m5stack-atoms3-lite <br> env:m5stack-atoms3-lite-m5unified | 公式ライブラリを使用<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
 | M5Stack CoreInk           | env:m5stack-core-ink                                           |                                                                                                          |
 | M5Stack Paper             | env:m5stack-paper                                              |                                                                                                          |
-| M5StampS3                  | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified           | 公式ライブラリはなし<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
+| M5StampS3                 | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | 公式ライブラリはなし<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
 
 ## 事前準備
 
@@ -39,7 +41,7 @@ monitor_port = ${env.upload_port}
 
 ※PlatformIO IDE [v3.0.0](https://github.com/platformio/platformio-vscode-ide/releases/tag/v3.0.0)より，ステータスバーからポートの切り替えができるようになりました。
 
-#### 環境名の設定
+#### 環境の設定
 
 「Switch PlatformIO Project Environment」（VSCode のステータスバーにある）で機種に合った環境名を設定します。
 
