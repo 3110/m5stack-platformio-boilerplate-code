@@ -1,6 +1,8 @@
+[In English](README_en_US.md)
+
 # PlatformIO IDE 向け M5Stack 定型コード環境
 
-[Arduino IDE](https://www.arduino.cc/en/software) 環境のように [PlatformIO IDE](https://platformio.org/platformio-ide) 環境でも `setup()`と`loop()`の中身を書いてすぐにコンパイルして実行できる環境です。
+[Arduino IDE](https://www.arduino.cc/en/software) 環境と同じように [PlatformIO IDE](https://platformio.org/platformio-ide) 環境でも `setup()`と`loop()`の中身を書いてすぐにコンパイルして実行できます。
 
 ## 対応機種
 
@@ -39,7 +41,7 @@ monitor_port = ${env.upload_port}
 
 ※PlatformIO IDE [v3.0.0](https://github.com/platformio/platformio-vscode-ide/releases/tag/v3.0.0)より，ステータスバーからポートの切り替えができるようになりました。
 
-#### 環境名の設定
+#### 環境の設定
 
 「Switch PlatformIO Project Environment」（VSCode のステータスバーにある）で機種に合った環境名を設定します。
 
