@@ -33,5 +33,6 @@
     ],
     "markdownlint.config": {
         "MD033": false, // allow Inline HTML
+        "MD041": false // First line in a file should be a top-level heading
     }
 }
