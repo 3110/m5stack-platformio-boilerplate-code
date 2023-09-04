@@ -51,6 +51,7 @@ default_envs = m5stack-basic
 ; default-envs = m5stack-fire
 ; default-envs = m5stack-m5go
 ; default_envs = m5stack-core2
+; default_envs = m5stack-cores3
 ; default_envs = m5stack-cores3-m5unified
 ; default_envs = m5stick-c
 ; default_envs = m5stick-c-plus

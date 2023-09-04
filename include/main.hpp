@@ -36,7 +36,7 @@ inline void M5_BEGIN(bool LCDEnable = true, bool SDEnable = true,
                      mbus_mode_t mode = kMBusModeOutput) {
     M5.begin(LCDEnable, SDEnable, SerialEnable, I2CEnable, mode);
 }
-#elif defined(ARDUINO_M5STACK_CoreS3)
+#elif defined(ARDUINO_M5STACK_CORES3)
 #include <M5CoreS3.h>
 inline void M5_BEGIN(bool LCDEnable = true, bool SerialEnable = true,
                      bool I2CEnable = false) {
@@ -81,7 +81,7 @@ inline void M5_BEGIN(void) {
 #endif
 
 inline void M5_UPDATE(void) {
-#if !defined(ARDUINO_M5STACK_CoreS3) && !defined(ARDUINO_M5Stack_StampS3)
+#if !defined(ARDUINO_M5STACK_CORES3) && !defined(ARDUINO_M5Stack_StampS3)
     M5.update();
 #endif
 }
