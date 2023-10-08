@@ -15,20 +15,18 @@ inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
     M5.begin(cfg);
 }
 #elif defined(ARDUINO_M5Stack_Core_ESP32) || defined(ARDUINO_M5STACK_FIRE)
-#if defined(ARDUINO_M5Stack_Paper)
+#include <M5Stack.h>
+inline void M5_BEGIN(bool LCDEnable = true, bool SDEnable = true,
+                     bool SerialEnable = true, bool I2CEnable = false) {
+    M5.begin(LCDEnable, SDEnable, SerialEnable, I2CEnable);
+}
+#elif defined(ARDUINO_M5Stack_Paper)
 #include <M5EPD.h>
 inline void M5_BEGIN(bool TouchEnable = true, bool SDEnable = true,
                      bool SerialEnable = true, bool BatteryADCEnable = true,
                      bool I2CEnable = false) {
     M5.begin(TouchEnable, SDEnable, SerialEnable, BatteryADCEnable, I2CEnable);
 }
-#else
-#include <M5Stack.h>
-inline void M5_BEGIN(bool LCDEnable = true, bool SDEnable = true,
-                     bool SerialEnable = true, bool I2CEnable = false) {
-    M5.begin(LCDEnable, SDEnable, SerialEnable, I2CEnable);
-}
-#endif
 #elif defined(ARDUINO_M5STACK_Core2)
 #include <M5Core2.h>
 inline void M5_BEGIN(bool LCDEnable = true, bool SDEnable = true,
