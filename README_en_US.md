@@ -19,6 +19,7 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5Stack CoreInk           | env:m5stack-core-ink                                           |                                                                                                                     |
 | M5Stack Paper             | env:m5stack-paper                                              |                                                                                                                     |
 | M5StampS3                 | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | without the M5Stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled |
+| M5Capsule                 | env:m5stack-capsule-m5unified         | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled |
 
 ## Preparation
 
@@ -65,6 +66,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-paper
 ; default_envs = m5stack-stamps3
 ; default_envs = m5stack-stamps3-m5unified
+; default_envs = m5stack-capsule-m5unified
 ```
 
 ### Third Party Libraries
