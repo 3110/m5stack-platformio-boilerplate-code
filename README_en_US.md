@@ -13,13 +13,17 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5Stack CORES3            | env:m5stack-cores3 <br> env:m5stack-cores3-m5unified           | with the M5Stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled    |
 | M5StickC                  | env:m5stack-c                                                  |                                                                                                                     |
 | M5StickC Plus             | env:m5stack-c-plus                                             |                                                                                                                     |
-| M5ATOM Lite/Matrix/Echo/U | env:m5stack-atom <br> env:m5stack-atom-m5unified               | with the M5stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                |
+| M5ATOM Matrix             | env:m5stack-atom-matrix <br> env:m5stack-atom-matrix-m5unified | with the M5stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                |
+| M5ATOM Lite               | env:m5stack-atom-lite <br> env:m5stack-atom-lite-m5unified     | with the M5stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                |
+| M5ATOM Echo               | env:m5stack-atom-echo <br> env:m5stack-atom-echo-m5unified     | with the M5stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                |
+| M5ATOM U                  | env:m5stack-atom-u <br> env:m5stack-atom-u-m5unified           | with the M5stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                |
 | M5ATOMS3                  | env:m5stack-atoms3 <br> env:m5stack-atoms3-m5unified           | with the M5Stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled    |
 | M5ATOMS3 Lite             | env:m5stack-atoms3-lite <br> env:m5stack-atoms3-lite-m5unified | with the M5Stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled    |
+| M5ATOMS3 U                | env:m5stack-atoms3-u <br> env:m5stack-atoms3-u-m5unified       | with the M5Stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled    |
 | M5Stack CoreInk           | env:m5stack-core-ink                                           |                                                                                                                     |
 | M5Stack Paper             | env:m5stack-paper                                              |                                                                                                                     |
 | M5StampS3                 | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | without the M5Stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled |
-| M5Capsule                 | env:m5stack-capsule-m5unified         | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled |
+| M5Capsule                 | env:m5stack-capsule-m5unified                                  | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled                                  |
 
 ## Preparation
 
@@ -56,12 +60,20 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-cores3-m5unified
 ; default_envs = m5stick-c
 ; default_envs = m5stick-c-plus
-; default_envs = m5stack-atom
-; default_envs = m5stack-atom-m5unified
+; default_envs = m5stack-atom-matrix
+; default_envs = m5stack-atom-lite
+; default_envs = m5stack-atom-echo
+; default_envs = m5stack-atom-u
+; default_envs = m5stack-atom-matrix-m5unified
+; default_envs = m5stack-atom-lite-m5unified
+; default_envs = m5stack-atom-echo-m5unified
+; default_envs = m5stack-atom-u-m5unified
 ; default_envs = m5stack-atoms3
-; default_envs = m5stack-atoms3-m5unified
 ; default_envs = m5stack-atoms3-lite
+; default_envs = m5stack-atoms3-u
+; default_envs = m5stack-atoms3-m5unified
 ; default_envs = m5stack-atoms3-lite-m5unified
+; default_envs = m5stack-atoms3-u-m5unified
 ; default_envs = m5stack-coreink
 ; default_envs = m5stack-paper
 ; default_envs = m5stack-stamps3
