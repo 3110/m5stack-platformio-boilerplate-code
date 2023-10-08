@@ -21,7 +21,7 @@
 | M5Stack CoreInk           | env:m5stack-core-ink                                           |                                                                                                          |
 | M5Stack Paper             | env:m5stack-paper                                              |                                                                                                          |
 | M5StampS3                 | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | 公式ライブラリはなし<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |
-| M5Capsule                | env:m5stack-capsule-m5unified | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効 |  |
+| M5Capsule                 | env:m5stack-capsule-m5unified                                  | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効                         |
 
 ## 事前準備
 
