@@ -76,6 +76,7 @@ inline int M5_BEGIN(bool InkEnable = true, bool WireEnable = false,
 }
 #elif defined(ARDUINO_M5STACK_STAMPS3)
 #include <Arduino.h>
+#define FASTLED_INTERNAL
 #include <FastLED.h>
 inline void M5_BEGIN(void) {
 }
