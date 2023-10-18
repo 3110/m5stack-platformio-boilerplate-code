@@ -29,6 +29,7 @@
         "fastled",
         "mbus",
         "platformio",
+        "RFID",
         "Struct"
     ],
     "markdownlint.config": {

@@ -1,6 +1,6 @@
 #pragma once
 
-#if defined(USE_M5UNIFIED)
+#if defined(USE_M5UNIFIED) && !defined(USE_M5STACK_OFFICIAL)
 // clang-format off
 #include <M5Unified.h>
 #if defined(USE_FASTLED)
@@ -75,14 +75,28 @@ inline int M5_BEGIN(bool InkEnable = true, bool WireEnable = false,
     return M5.begin(InkEnable, WireEnable, SpeakerEnable);
 }
 #elif defined(ARDUINO_M5STACK_STAMPS3)
-#include <Arduino.h>
+#define FASTLED_INTERNAL
 #include <FastLED.h>
+#if defined(ARDUINO_M5STACK_DIAL) && defined(USE_M5STACK_OFFICIAL)
+#include <M5Dial.h>
+inline void M5_BEGIN(bool enableEncoder = false, bool enableRFID = false) {
+    M5Dial.begin(enableEncoder, enableRFID);
+}
+inline void M5_BEGIN(m5::M5Unified::config_t cfg, bool enableEncoder = false,
+                     bool enableRFID = false) {
+    M5Dial.begin(cfg, enableEncoder, enableRFID);
+}
+#else
+#include <Arduino.h>
 inline void M5_BEGIN(void) {
 }
 #endif
+#endif
 
 inline void M5_UPDATE(void) {
-#if !defined(ARDUINO_M5STACK_CORES3) && !defined(ARDUINO_M5STACK_STAMPS3)
+#if defined(ARDUINO_M5STACK_CORES3) || \
+    (defined(ARDUINO_M5STACK_STAMPS3) && !defined(ARDUINO_M5STACK_DIAL))
+#else
     M5.update();
 #endif
 }
