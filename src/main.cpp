@@ -1,4 +1,6 @@
+// clang-format off
 #include "main.hpp"
+// clang-format on
 
 void setup(void) {
     M5_BEGIN();
