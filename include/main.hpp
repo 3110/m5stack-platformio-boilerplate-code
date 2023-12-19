@@ -64,9 +64,11 @@ inline void M5_BEGIN(bool SerialEnable = true, bool I2CEnable = true,
 }
 #elif defined(ARDUINO_M5STACK_ATOMS3)
 #include <M5AtomS3.h>
-inline void M5_BEGIN(bool LCDEnable = true, bool SerialEnable = true,
-                     bool I2CEnable = true, bool LEDEnable = false) {
-    M5.begin(LCDEnable, SerialEnable, I2CEnable, LEDEnable);
+inline void M5_BEGIN(bool LEDEnable = false) {
+    AtomS3.begin(LEDEnable);
+}
+inline void M5_BEGIN(m5::M5Unified::config_t cfg, bool LEDEnable = false) {
+    AtomS3.begin(cfg, LEDEnable);
 }
 #elif defined(ARDUINO_M5STACK_COREINK)
 #include <M5CoreInk.h>
@@ -96,6 +98,8 @@ inline void M5_BEGIN(void) {
 inline void M5_UPDATE(void) {
 #if defined(ARDUINO_M5STACK_CORES3) || \
     (defined(ARDUINO_M5STACK_STAMPS3) && !defined(ARDUINO_M5STACK_DIAL))
+#elif defined(ARDUINO_M5STACK_ATOMS3) && defined(USE_M5STACK_OFFICIAL)
+    AtomS3.update();
 #else
     M5.update();
 #endif
