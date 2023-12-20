@@ -82,6 +82,8 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-stamps3
 ; default_envs = m5stack-stamps3-m5unified
 ; default_envs = m5stack-capsule-m5unified
+; default_envs = m5stack-dial
+; default_envs = m5stack-dial-m5unified
 ```
 
 ### 外部ライブラリの追加
