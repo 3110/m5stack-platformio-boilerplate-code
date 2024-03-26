@@ -83,7 +83,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-capsule-m5unified
 ; default_envs = m5stack-dial
 ; default_envs = m5stack-dial-m5unified
-; default-envs = m5stack-nanoc6
+; default_envs = m5stack-nanoc6
 ```
 
 ### Third Party Libraries
