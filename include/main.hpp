@@ -37,9 +37,11 @@ inline void M5_BEGIN(bool LCDEnable = true, bool SDEnable = true,
 }
 #elif defined(ARDUINO_M5STACK_CORES3)
 #include <M5CoreS3.h>
-inline void M5_BEGIN(bool LCDEnable = true, bool SerialEnable = true,
-                     bool I2CEnable = false) {
-    M5.begin(LCDEnable, SerialEnable, I2CEnable);
+inline void M5_BEGIN(void) {
+    CoreS3.begin();
+}
+inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
+    CoreS3.begin(cfg);
 }
 #elif defined(ARDUINO_M5STICK_C)
 #include <M5StickC.h>
@@ -131,6 +133,8 @@ inline void M5_UPDATE(void) {
     (defined(ARDUINO_M5STACK_STAMPS3) && !defined(ARDUINO_M5STACK_DIAL))
 #elif defined(ARDUINO_M5STACK_ATOMS3) && defined(USE_M5STACK_OFFICIAL)
     AtomS3.update();
+#elif defined(ARDUINO_M5STACK_CORES3) && defined(USE_M5STACK_OFFICIAL)
+    CoreS3.update();
 #elif defined(ARDUINO_M5STACK_NANOC6)
     NanoC6.update();
 #else
