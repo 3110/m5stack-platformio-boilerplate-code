@@ -120,7 +120,6 @@ inline void M5_BEGIN(void) {
     pinMode(M5NANO_C6_RGB_LED_PWR_PIN, OUTPUT);
     digitalWrite(M5NANO_C6_RGB_LED_PWR_PIN, HIGH);
     RGB_LED.begin();
-    RGB_LED.show();
 #endif
 #if defined(USE_BLUE_LED)
     pinMode(M5NANO_C6_BLUE_LED_PIN, OUTPUT);
