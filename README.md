@@ -27,6 +27,7 @@
 | M5StampS3       | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | 公式ライブラリはなし<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                   |
 | M5Capsule       | env:m5stack-capsule-m5unified                                  | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                           |
 | M5Dial          | env:m5stack-dial <br> env:m5stack-dial-m5unified               | 公式ライブラリを使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）<br>[M5Unified](https://github.com/m5stack/M5Unified)を使用。USB CDC On Boot が有効。                         |
+| M5Cardputer     | env:m5stack-cardputer                                          | 公式ライブラリを使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。USB CDC On Boot が有効。                                                                                    |
 | M5NanoC6        | env:m5stack-nanoc6                                             | 公式ライブラリを使用                                                                                                                                                                         |
 
 ## 事前準備
@@ -85,6 +86,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-capsule-m5unified
 ; default_envs = m5stack-dial
 ; default_envs = m5stack-dial-m5unified
+; default_envs = m5stack-cardputer
 ; default_envs = m5stack-nanoc6
 ```
 

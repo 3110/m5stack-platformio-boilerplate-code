@@ -24,7 +24,8 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5Stack Paper   | env:m5stack-paper                                              |                                                                                                                                                                                                           |
 | M5StampS3       | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | without the M5Stack's library<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                      |
 | M5Capsule       | env:m5stack-capsule-m5unified                                  | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                       |
-| M5Dial          | env:m5stack-dial<br>env:m5stack-dial-m5unified                 | with the M5Stack's library(based on [M5Unified](https://github.com/m5stack/M5Unified))<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled                              |
+| M5Dial          | env:m5stack-dial<br>env:m5stack-dial-m5unified                 | with the M5Stack's library(based on [M5Unified](https://github.com/m5stack/M5Unified))<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                             |
+| M5Cardputer     | env:m5stack-cardputer                                          | with the M5Stack's library(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled.                                                                                        |
 | M5NanoC6        | env:m5stack-nanoc6                                             | with the M5stack's library                                                                                                                                                                                |
 
 ## Preparation
@@ -83,6 +84,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-capsule-m5unified
 ; default_envs = m5stack-dial
 ; default_envs = m5stack-dial-m5unified
+; default_envs = m5stack-cardputer
 ; default_envs = m5stack-nanoc6
 ```
 
