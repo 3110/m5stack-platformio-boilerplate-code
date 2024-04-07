@@ -90,6 +90,15 @@ inline void M5_BEGIN(m5::M5Unified::config_t cfg, bool enableEncoder = false,
                      bool enableRFID = false) {
     M5Dial.begin(cfg, enableEncoder, enableRFID);
 }
+#elif defined(ARDUINO_M5STACK_CARDPUTER) && defined(USE_M5STACK_OFFICIAL)
+#include <M5Cardputer.h>
+inline void M5_BEGIN(void) {
+    M5Cardputer.begin();
+    M5Cardputer.Lcd.setRotation(1);
+}
+inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
+    M5Cardputer.begin(cfg);
+}
 #else
 #include <Arduino.h>
 inline void M5_BEGIN(void) {
@@ -128,14 +137,20 @@ inline void M5_BEGIN(void) {
 #endif
 
 inline void M5_UPDATE(void) {
-#if defined(ARDUINO_M5STACK_CORES3) || \
-    (defined(ARDUINO_M5STACK_STAMPS3) && !defined(ARDUINO_M5STACK_DIAL))
-#elif defined(ARDUINO_M5STACK_ATOMS3) && defined(USE_M5STACK_OFFICIAL)
+#if defined(ARDUINO_M5STACK_ATOMS3) && defined(USE_M5STACK_OFFICIAL)
     AtomS3.update();
 #elif defined(ARDUINO_M5STACK_CORES3) && defined(USE_M5STACK_OFFICIAL)
     CoreS3.update();
-#elif defined(ARDUINO_M5STACK_NANOC6)
+#elif defined(ARDUINO_M5STACK_NANOC6) && defined(USE_M5STACK_OFFICIAL)
     NanoC6.update();
+#elif defined(ARDUINO_M5STACK_STAMPS3) && defined(USE_M5STACK_OFFICIAL)
+#if defined(AROUND_M5STACK_DIAL)
+    M5Dial.update();
+#elif defined(ARDUINO_M5STACK_CARDPUTER)
+    M5Cardputer.update();
+#else
+    // M5.update() is not implemented
+#endif
 #else
     M5.update();
 #endif
