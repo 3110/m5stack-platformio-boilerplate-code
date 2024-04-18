@@ -102,6 +102,7 @@ lib_deps =
 Write your code in the `setup()` and `loop()` in `main.cpp`. The `main.hpp` enables you to include the device-specific header files for your device.
 
 I have defined the `M5_BEGIN` and `M5_UPDATE` macros to handle the varying and confusing arguments for `M5.begin()` across different models, including cases where model-specific names like `CoreS3.begin()` are used.
+Furthermore, depending on the model, the instance of `M5` may have a model-specific name (for example, in the official library for M5Stack CoreS3, it is not `M5` but `CoreS3`), so it is configured to be accessible by the same `M5DEV` in any case.
 Please refer to `main.hpp` for the specific definition.
 
 Note: When using `SD.h` or `SPIFFS.h` with M5Unified, make sure to include them before the `#include "main.hpp"` statement.
