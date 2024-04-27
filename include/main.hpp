@@ -112,6 +112,17 @@ inline void M5_BEGIN(void) {
 inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
     M5DEV.begin(cfg);
 }
+#elif defined(ARDUINO_M5STACK_DIN_METER) && defined(USE_M5STACK_OFFICIAL)
+#include <M5DinMeter.h>
+#undef M5DEV
+#define M5DEV DinMeter
+inline void M5_BEGIN(void) {
+    M5DEV.begin();
+    M5DEV.Lcd.setRotation(1);
+}
+inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
+    M5DEV.begin(cfg);
+}
 #else
 #include <Arduino.h>
 inline void M5_BEGIN(void) {

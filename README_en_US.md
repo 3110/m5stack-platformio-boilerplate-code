@@ -26,6 +26,7 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5Capsule       | env:m5stack-capsule-m5unified                                  | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
 | M5Dial          | env:m5stack-dial<br>env:m5stack-dial-m5unified                 | with [the official M5Stack library](https://github.com/m5stack/M5Dial)(based on [M5Unified](https://github.com/m5stack/M5Unified))<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                               |
 | M5Cardputer     | env:m5stack-cardputer                                          | with [the official M5Stack library](https://github.com/m5stack/M5Cardputer)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled.                                                                                    |
+| M5DinMeter      | env:m5stack-din-meter                                          | with [the official M5Stack library](https://github.com/m5stack/M5DinMeter)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled.                                                                                    |
 | M5NanoC6        | env:m5stack-nanoc6                                             | with [the official M5stack library](https://github.com/m5stack/M5NanoC6)                                                                                                                                                                                |
 
 ## Preparation
@@ -85,6 +86,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-dial
 ; default_envs = m5stack-dial-m5unified
 ; default_envs = m5stack-cardputer
+; default_envs = m5stack-din-meter
 ; default_envs = m5stack-nanoc6
 ```
 

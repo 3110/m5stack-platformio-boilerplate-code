@@ -28,6 +28,7 @@
 | M5Capsule       | env:m5stack-capsule-m5unified                                  | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                                                    |
 | M5Dial          | env:m5stack-dial <br> env:m5stack-dial-m5unified               | [公式ライブラリ](https://github.com/m5stack/M5Dial)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。<br>[M5Unified](https://github.com/m5stack/M5Unified)を使用。USB CDC On Boot が有効。                           |
 | M5Cardputer     | env:m5stack-cardputer                                          | [公式ライブラリ](https://github.com/m5stack/M5Cardputer)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。USB CDC On Boot が有効。                                                                                   |
+| M5DinMeter      | env:m5stack-din-meter                                          | [公式ライブラリ](https://github.com/m5stack/M5DinMeter)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。USB CDC On Boot が有効。                                                                                    |
 | M5NanoC6        | env:m5stack-nanoc6                                             | [公式ライブラリ](https://github.com/m5stack/M5NanoC6)を使用。                                                                                                                                                                         |
 
 ## 事前準備
@@ -87,6 +88,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-dial
 ; default_envs = m5stack-dial-m5unified
 ; default_envs = m5stack-cardputer
+; default_envs = m5stack-din-meter
 ; default_envs = m5stack-nanoc6
 ```
 
