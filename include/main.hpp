@@ -107,7 +107,6 @@ inline void M5_BEGIN(m5::M5Unified::config_t cfg, bool enableEncoder = false,
 #define M5DEV M5Cardputer
 inline void M5_BEGIN(void) {
     M5DEV.begin();
-    M5DEV.Lcd.setRotation(1);
 }
 inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
     M5DEV.begin(cfg);
