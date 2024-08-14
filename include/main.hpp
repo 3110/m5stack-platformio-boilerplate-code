@@ -37,8 +37,10 @@ inline void M5_BEGIN(bool TouchEnable = true, bool SDEnable = true,
 #include <M5Core2.h>
 inline void M5_BEGIN(bool LCDEnable = true, bool SDEnable = true,
                      bool SerialEnable = true, bool I2CEnable = false,
-                     mbus_mode_t mode = kMBusModeOutput) {
-    M5DEV.begin(LCDEnable, SDEnable, SerialEnable, I2CEnable, mode);
+                     mbus_mode_t mode = kMBusModeOutput,
+                     bool SpeakerEnable = true) {
+    M5DEV.begin(LCDEnable, SDEnable, SerialEnable, I2CEnable, mode,
+                SpeakerEnable);
 }
 #elif defined(ARDUINO_M5STACK_CORES3)
 #undef M5DEV
