@@ -26,7 +26,7 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5Capsule       | env:m5stack-capsule-m5unified                                  | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
 | M5Dial          | env:m5stack-dial<br>env:m5stack-dial-m5unified                 | with [the official M5Stack library](https://github.com/m5stack/M5Dial)(based on [M5Unified](https://github.com/m5stack/M5Unified))<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                               |
 | M5Cardputer     | env:m5stack-cardputer                                          | with [the official M5Stack library](https://github.com/m5stack/M5Cardputer)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled.                                                                                    |
-| M5DinMeter      | env:m5stack-din-meter                                          | with [the official M5Stack library](https://github.com/m5stack/M5DinMeter)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled.                                                                                    |
+| M5DinMeter      | env:m5stack-din-meter                                          | with [the official M5Stack library](https://github.com/m5stack/M5DinMeter)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled.                                                                                     |
 | M5NanoC6        | env:m5stack-nanoc6                                             | with [the official M5stack library](https://github.com/m5stack/M5NanoC6)                                                                                                                                                                                |
 
 ## Preparation
@@ -105,7 +105,7 @@ Write your code in the `setup()` and `loop()` in `main.cpp`. The `main.hpp` enab
 
 I have defined the `M5_BEGIN()` and `M5_UPDATE()` macros to manage the diverse and sometimes confusing arguments for `M5.begin()` across different models; this includes instances where model-specific names such as `CoreS3.begin()` are utilized. Additionally, depending on the model, the `M5` instance may be named specifically for that model (for instance, in the official library for the M5Stack CoreS3, it is referred to as `CoreS3` rather than `M5`). Therefore, it is set up to be accessed by the uniform identifier `M5DEV` in all cases.
 
-To unify the format of logging output, the macros `M5DEV_LOGE()`, `M5DEV_LOGW()`, `M5DEV_LOGI()`, `M5DEV_LOGD()`, and `M5DEV_LOGV()` have been defined. 
+To unify the format of logging output, the macros `M5DEV_LOGE()`, `M5DEV_LOGW()`, `M5DEV_LOGI()`, `M5DEV_LOGD()`, and `M5DEV_LOGV()` have been defined.
 
 For detailed definitions, please consult `main.hpp`.
 
