@@ -11,6 +11,9 @@
 #define FASTLED_INTERNAL
 #include <FastLED.h>
 #endif
+#if defined(USE_MODULE_LLM)
+#include <M5ModuleLLM.h>
+#endif
 // clang-format on
 inline void M5_BEGIN(void) {
     M5DEV.begin();
