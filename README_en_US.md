@@ -23,6 +23,7 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5ATOMS3 U           | env:m5stack-atoms3-u <br> env:m5stack-atoms3-u-m5unified       | with [the official M5Stack library](https://github.com/m5stack/M5AtomS3)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled. |
 | M5Stack CoreInk      | env:m5stack-core-ink                                           | with [the official M5Stack library](https://github.com/m5stack/M5Core-Ink)                                                                                                                                                                              |
 | M5Stack Paper        | env:m5stack-paper                                              | with [the official M5Stack library](https://github.com/m5stack/M5EPD)                                                                                                                                                                                   |
+| M5Stack PaperS3      | env:m5stack-papers3                                            | the official M5Stack library is missing.<br>with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                     |
 | M5StampS3            | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | the official M5Stack library is missing.<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                         |
 | M5Capsule            | env:m5stack-capsule-m5unified                                  | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
 | M5Dial               | env:m5stack-dial<br>env:m5stack-dial-m5unified                 | with [the official M5Stack library](https://github.com/m5stack/M5Dial)(based on [M5Unified](https://github.com/m5stack/M5Unified))<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                               |
@@ -85,6 +86,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-atoms3-u-m5unified
 ; default_envs = m5stack-coreink
 ; default_envs = m5stack-paper
+; default_envs = m5stack-papers3
 ; default_envs = m5stack-stamps3
 ; default_envs = m5stack-stamps3-m5unified
 ; default_envs = m5stack-capsule-m5unified
