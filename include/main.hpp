@@ -4,25 +4,10 @@
 #define M5DEV M5
 #endif
 
-#if defined(USE_M5UNIFIED) && !defined(USE_M5STACK_OFFICIAL)
-// clang-format off
-#include <M5Unified.h>
-#if defined(USE_FASTLED)
-#define FASTLED_INTERNAL
-#include <FastLED.h>
-#endif
-#if defined(USE_MODULE_LLM)
-#include <M5ModuleLLM.h>
-#endif
-// clang-format on
-inline void M5_BEGIN(void) {
-    M5DEV.begin();
-}
-inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
-    M5DEV.begin(cfg);
-}
-#elif defined(ARDUINO_M5STACK_BASIC) || defined(ARDUINO_M5STACK_FIRE) || \
-    defined(ARDUINO_M5STACK_M5GO)
+#if defined(USE_M5STACK_OFFICIAL)
+
+#if (defined(ARDUINO_M5STACK_BASIC) || defined(ARDUINO_M5STACK_FIRE) || \
+     defined(ARDUINO_M5STACK_M5GO))
 #include <M5Stack.h>
 inline void M5_BEGIN(bool LCDEnable = true, bool SDEnable = true,
                      bool SerialEnable = true, bool I2CEnable = false) {
@@ -56,17 +41,19 @@ inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
     M5DEV.begin(cfg);
 }
 #elif defined(ARDUINO_M5STICK_C)
-#include <M5StickC.h>
-inline void M5_BEGIN(bool LCDEnable = true, bool PowerEnable = true,
-                     bool SerialEnable = true) {
-    M5DEV.begin(LCDEnable, PowerEnable, SerialEnable);
-}
-#elif defined(ARDUINO_M5SICK_C_PLUS)
+#if defined(ARDUINO_M5SICK_C_PLUS)
 #include <M5StickCPlus.h>
 inline void M5_BEGIN(bool LCDEnable = true, bool PowerEnable = true,
                      bool SerialEnable = true) {
     M5DEV.begin(LCDEnable, PowerEnable, SerialEnable);
 }
+#else
+#include <M5StickC.h>
+inline void M5_BEGIN(bool LCDEnable = true, bool PowerEnable = true,
+                     bool SerialEnable = true) {
+    M5DEV.begin(LCDEnable, PowerEnable, SerialEnable);
+}
+#endif
 #elif defined(ARDUINO_M5STACK_ATOM)
 #include <M5Atom.h>
 inline void M5_BEGIN(bool SerialEnable = true, bool I2CEnable = true,
@@ -95,7 +82,7 @@ inline int M5_BEGIN(bool InkEnable = true, bool WireEnable = false,
 #elif defined(ARDUINO_M5STACK_STAMPS3)
 #define FASTLED_INTERNAL
 #include <FastLED.h>
-#if defined(ARDUINO_M5STACK_DIAL) && defined(USE_M5STACK_OFFICIAL)
+#if defined(ARDUINO_M5STACK_DIAL)
 #include <M5Dial.h>
 #undef M5DEV
 #define M5DEV M5Dial
@@ -106,7 +93,7 @@ inline void M5_BEGIN(m5::M5Unified::config_t cfg, bool enableEncoder = false,
                      bool enableRFID = false) {
     M5DEV.begin(cfg, enableEncoder, enableRFID);
 }
-#elif defined(ARDUINO_M5STACK_CARDPUTER) && defined(USE_M5STACK_OFFICIAL)
+#elif defined(ARDUINO_M5STACK_CARDPUTER)
 #include <M5Cardputer.h>
 #undef M5DEV
 #define M5DEV M5Cardputer
@@ -116,7 +103,7 @@ inline void M5_BEGIN(void) {
 inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
     M5DEV.begin(cfg);
 }
-#elif defined(ARDUINO_M5STACK_DIN_METER) && defined(USE_M5STACK_OFFICIAL)
+#elif defined(ARDUINO_M5STACK_DIN_METER)
 #include <M5DinMeter.h>
 #undef M5DEV
 #define M5DEV DinMeter
@@ -163,6 +150,25 @@ inline void M5_BEGIN(void) {
 #if defined(USE_BLUE_LED)
     pinMode(M5NANO_C6_BLUE_LED_PIN, OUTPUT);
 #endif
+}
+#endif
+
+#elif defined(USE_M5UNIFIED)
+// clang-format off
+#include <M5Unified.h>
+#if defined(USE_FASTLED)
+#define FASTLED_INTERNAL
+#include <FastLED.h>
+#endif
+#if defined(USE_MODULE_LLM)
+#include <M5ModuleLLM.h>
+#endif
+// clang-format on
+inline void M5_BEGIN(void) {
+    M5DEV.begin();
+}
+inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
+    M5DEV.begin(cfg);
 }
 #endif
 
