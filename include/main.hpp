@@ -4,7 +4,7 @@
 #define M5DEV M5
 #endif
 
-#if defined(USE_M5STACK_OFFICIAL)
+#if defined(USE_M5STACK_OFFICIAL) || !defined(USE_M5UNIFIED)
 
 #if (defined(ARDUINO_M5STACK_BASIC) || defined(ARDUINO_M5STACK_FIRE) || \
      defined(ARDUINO_M5STACK_M5GO))
@@ -116,6 +116,7 @@ inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
 }
 #else
 #include <Arduino.h>
+#undef M5DEV
 inline void M5_BEGIN(void) {
 }
 #endif
@@ -174,7 +175,9 @@ inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
 
 inline void M5_UPDATE(void) {
 #if defined(USE_M5STACK_OFFICIAL) || defined(USE_M5UNIFIED)
+#if !defined(ARDUINO_M5STACK_STAMPS3)
     M5DEV.update();
+#endif
 #endif
 }
 
