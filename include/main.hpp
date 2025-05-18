@@ -41,11 +41,21 @@ inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
     M5DEV.begin(cfg);
 }
 #elif defined(ARDUINO_M5STICK_C)
-#if defined(ARDUINO_M5SICK_C_PLUS)
+#if defined(ARDUINO_M5STICK_C_PLUS)
 #include <M5StickCPlus.h>
 inline void M5_BEGIN(bool LCDEnable = true, bool PowerEnable = true,
                      bool SerialEnable = true) {
     M5DEV.begin(LCDEnable, PowerEnable, SerialEnable);
+}
+#elif defined(ARDUINO_M5STICK_C_PLUS2)
+#include <M5StickCPlus2.h>
+#undef M5DEV
+#define M5DEV StickCP2
+inline void M5_BEGIN(void) {
+    M5DEV.begin();
+}
+inline void M5_BEGIN(m5::M5Unified::config_t cfg) {
+    M5DEV.begin(cfg);
 }
 #else
 #include <M5StickC.h>

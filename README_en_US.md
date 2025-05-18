@@ -11,8 +11,9 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5Stack M5GO         | env:m5stack-m5go                                               | with [the official M5Stack library](https://github.com/m5stack/M5Stack)                                                                                                                                                                                 |
 | M5Stack CORE2        | env:m5stack-core2 <br> env:m5stack-core2-m5unified             | with [the official M5Stack library](https://github.com/m5stack/M5Core2)(Deprecated)<br>with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                          |
 | M5Stack CORES3       | env:m5stack-cores3 <br> env:m5stack-cores3-m5unified           | with [the official M5Stack library](https://github.com/m5stack/M5CoreS3)<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                         |
-| M5StickC             | env:m5stack-c                                                  | with [the official M5Stack library](https://github.com/m5stack/M5StickC)                                                                                                                                                                                |
-| M5StickC Plus        | env:m5stack-c-plus                                             | with [the official M5Stack library](https://github.com/m5stack/M5StickC-Plus)                                                                                                                                                                           |
+| M5StickC             | env:m5stick-c                                                  | with [the official M5Stack library](https://github.com/m5stack/M5StickC)                                                                                                                                                                                |
+| M5StickC Plus        | env:m5stick-c-plus                                             | with [the official M5Stack library](https://github.com/m5stack/M5StickC-Plus)                                                                                                                                                                           |
+| M5StickC Plus2       | env:m5stick-c-plus2 <br> env:m5stick-c-plus2-m5unified         | with [the official M5Stack library](https://github.com/m5stack/M5StickCPlus2)(based on [M5Unified](https://github.com/m5stack/M5Unified))<br>with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                           |
 | M5ATOM Matrix        | env:m5stack-atom-matrix <br> env:m5stack-atom-matrix-m5unified | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
 | M5ATOM Lite          | env:m5stack-atom-lite <br> env:m5stack-atom-lite-m5unified     | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
 | M5ATOM Echo          | env:m5stack-atom-echo <br> env:m5stack-atom-echo-m5unified     | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
@@ -29,7 +30,8 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5Dial               | env:m5stack-dial<br>env:m5stack-dial-m5unified                 | with [the official M5Stack library](https://github.com/m5stack/M5Dial)(based on [M5Unified](https://github.com/m5stack/M5Unified))<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                               |
 | M5Cardputer          | env:m5stack-cardputer                                          | with [the official M5Stack library](https://github.com/m5stack/M5Cardputer)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled.                                                                                    |
 | M5DinMeter           | env:m5stack-din-meter                                          | with [the official M5Stack library](https://github.com/m5stack/M5DinMeter)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled.                                                                                     |
-| M5NanoC6             | env:m5stack-nanoc6                                             | with [the official M5stack library](https://github.com/m5stack/M5NanoC6)                                                                                                                                                                                |
+| M5NanoC6             | env:m5stack-nanoc6                                             | with [the official M5stack library](https://github.com/m5stack/M5NanoC6) and [pioarduino](https://github.com/pioarduino/platform-espressif32)                                                                                                           |
+| M5Stack Tab5         | env:m5stack-tab5                                               | with [M5Unified](https://github.com/m5stack/M5Unified) and [pioarduino](https://github.com/pioarduino/platform-espressif32).                                                                                                                            |
 | M5Stack BASIC w/LLM  | env:m5stack-basic-m5unified-llm                                | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
 | M5Stack Core2 w/LLM  | env:m5stack-core2-m5unified-llm                                | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
 | M5Stack CoreS3 w/LLM | env:m5stack-core3-m5unified-llm                                | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
@@ -69,6 +71,8 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-cores3-m5unified
 ; default_envs = m5stick-c
 ; default_envs = m5stick-c-plus
+; default_envs = m5stick-c-plus2
+; default_envs = m5stick-c-plus2-m5unified
 ; default_envs = m5stack-atom-matrix
 ; default_envs = m5stack-atom-lite
 ; default_envs = m5stack-atom-echo
@@ -95,6 +99,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-cardputer
 ; default_envs = m5stack-din-meter
 ; default_envs = m5stack-nanoc6
+; default_envs = m5stack-tab5
 
 ; default_envs = m5stack-basic-m5unified-llm
 ; default_envs = m5stack-core2-m5unified-llm
