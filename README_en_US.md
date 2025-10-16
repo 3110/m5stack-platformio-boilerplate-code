@@ -13,13 +13,14 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5Stack CORES3       | env:m5stack-cores3 <br> env:m5stack-cores3-m5unified           | with [the official M5Stack library](https://github.com/m5stack/M5CoreS3)<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                         |
 | M5StickC             | env:m5stick-c                                                  | with [the official M5Stack library](https://github.com/m5stack/M5StickC)                                                                                                                                                                                |
 | M5StickC Plus        | env:m5stick-c-plus                                             | with [the official M5Stack library](https://github.com/m5stack/M5StickC-Plus)                                                                                                                                                                           |
-| M5StickC Plus2       | env:m5stick-c-plus2 <br> env:m5stick-c-plus2-m5unified         | with [the official M5Stack library](https://github.com/m5stack/M5StickCPlus2)(based on [M5Unified](https://github.com/m5stack/M5Unified))<br>with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                           |
+| M5StickC Plus2       | env:m5stick-c-plus2-m5unified                                  | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
 | M5ATOM Matrix        | env:m5stack-atom-matrix <br> env:m5stack-atom-matrix-m5unified | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
 | M5ATOM Lite          | env:m5stack-atom-lite <br> env:m5stack-atom-lite-m5unified     | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
 | M5ATOM Echo          | env:m5stack-atom-echo <br> env:m5stack-atom-echo-m5unified     | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
 | M5ATOM U             | env:m5stack-atom-u <br> env:m5stack-atom-u-m5unified           | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
 | M5ATOMS3             | env:m5stack-atoms3 <br> env:m5stack-atoms3-m5unified           | with [the official M5Stack library](https://github.com/m5stack/M5AtomS3)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled. |
 | M5ATOMS3R            | env:m5stack-atoms3r-m5unified                                  | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
+| M5ATOM EchoS3R       | env:m5stack-atom-echos3r-m5unified                             | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
 | M5ATOMS3 Lite        | env:m5stack-atoms3-lite <br> env:m5stack-atoms3-lite-m5unified | with [the official M5Stack library](https://github.com/m5stack/M5AtomS3)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled. |
 | M5ATOMS3 U           | env:m5stack-atoms3-u <br> env:m5stack-atoms3-u-m5unified       | with [the official M5Stack library](https://github.com/m5stack/M5AtomS3)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled. |
 | M5Stack CoreInk      | env:m5stack-core-ink                                           | with [the official M5Stack library](https://github.com/m5stack/M5Core-Ink)                                                                                                                                                                              |
@@ -71,7 +72,6 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-cores3-m5unified
 ; default_envs = m5stick-c
 ; default_envs = m5stick-c-plus
-; default_envs = m5stick-c-plus2
 ; default_envs = m5stick-c-plus2-m5unified
 ; default_envs = m5stack-atom-matrix
 ; default_envs = m5stack-atom-lite
@@ -83,6 +83,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-atom-u-m5unified
 ; default_envs = m5stack-atoms3
 ; default_envs = m5stack-atoms3r-m5unified
+; default_envs = m5stack-atom-echos3r-m5unified
 ; default_envs = m5stack-atoms3-lite
 ; default_envs = m5stack-atoms3-u
 ; default_envs = m5stack-atoms3-m5unified

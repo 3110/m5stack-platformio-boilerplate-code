@@ -174,12 +174,29 @@ inline void M5_BEGIN(void) {
 #if defined(USE_MODULE_LLM)
 #include <M5ModuleLLM.h>
 #endif
+#if defined(ARDUINO_M5STACK_TAB5)
+#include <WiFi.h>
+#define SDIO2_CLK GPIO_NUM_12
+#define SDIO2_CMD GPIO_NUM_13
+#define SDIO2_D0  GPIO_NUM_11
+#define SDIO2_D1  GPIO_NUM_10
+#define SDIO2_D2  GPIO_NUM_9
+#define SDIO2_D3  GPIO_NUM_8
+#define SDIO2_RST GPIO_NUM_15
+#endif
+
 // clang-format on
-inline void M5_BEGIN(void) {
-    M5DEV.begin();
-}
 inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
     M5DEV.begin(cfg);
+#if defined(ARDUINO_M5STACK_TAB5)
+    WiFi.setPins(SDIO2_CLK, SDIO2_CMD, SDIO2_D0, SDIO2_D1, SDIO2_D2, SDIO2_D3,
+                 SDIO2_RST);
+#endif
+}
+
+inline void M5_BEGIN(void) {
+    auto cfg = M5.config();
+    M5_BEGIN(cfg);
 }
 #endif
 

@@ -14,13 +14,14 @@
 | M5Stack CORES3       | env:m5stack-cores3 <br> env:m5stack-cores3-m5unified           | [公式ライブラリ](https://github.com/m5stack/M5CoreS3)を使用。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                    |
 | M5StickC             | env:m5stick-c                                                  | [公式ライブラリ](https://github.com/m5stack/M5StickC)を使用。                                                                                                                                                                          |
 | M5StickC Plus        | env:m5stick-c-plus                                             | [公式ライブラリ](https://github.com/m5stack/M5StickC-Plus)を使用。                                                                                                                                                                     |
-| M5StickC Plus2       | env:m5stick-c-plus2 <br> env:m5stick-c-plus2-m5unified         | [公式ライブラリ](https://github.com/m5stack/M5StickCPlus2)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                       |
+| M5StickC Plus2       | env:m5stick-c-plus2-m5unified                                  | [M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                                                                                             |
 | M5ATOM Matrix        | env:m5stack-atom-matrix <br> env:m5stack-atom-matrix-m5unified | [公式ライブラリ](https://github.com/m5stack/M5Atom)を使用。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                              |
 | M5ATOM Lite          | env:m5stack-atom-lite <br> env:m5stack-atom-lite-m5unified     | [公式ライブラリ](https://github.com/m5stack/M5Atom)を使用。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                              |
 | M5ATOM Echo          | env:m5stack-atom-echo <br> env:m5stack-atom-echo-m5unified     | [公式ライブラリ](https://github.com/m5stack/M5Atom)を使用。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                              |
 | M5ATOM U             | env:m5stack-atom-u <br> env:m5stack-atom-u-m5unified           | [公式ライブラリ](https://github.com/m5stack/M5Atom)を使用。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                              |
 | M5ATOMS3             | env:m5stack-atoms3 <br> env:m5stack-atoms3-m5unified           | [公式ライブラリ](https://github.com/m5stack/M5AtomS3)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。USB CDC On Boot が有効。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。 |
 | M5ATOMS3R            | env:m5stack-atoms3r-m5unified                                  | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                                                     |
+| M5ATOM EchoS3R       | env:m5stack-echo-atoms3r-m5unified                             | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                                                     |
 | M5ATOMS3 Lite        | env:m5stack-atoms3-lite <br> env:m5stack-atoms3-lite-m5unified | [公式ライブラリ](https://github.com/m5stack/M5AtomS3)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。USB CDC On Boot が有効。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。 |
 | M5ATOMS3 U           | env:m5stack-atoms3-u <br> env:m5stack-atoms3-u-m5unified       | [公式ライブラリ](https://github.com/m5stack/M5AtomS3)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。USB CDC On Boot が有効。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。 |
 | M5Stack CoreInk      | env:m5stack-core-ink                                           | [公式ライブラリ](https://github.com/m5stack/M5Core-Ink)を使用。                                                                                                                                                                        |
@@ -72,7 +73,6 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-cores3-m5unified
 ; default_envs = m5stick-c
 ; default_envs = m5stick-c-plus
-; default_envs = m5stick-c-plus2
 ; default_envs = m5stick-c-plus2-m5unified
 ; default_envs = m5stack-atom-matrix
 ; default_envs = m5stack-atom-lite
@@ -84,6 +84,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-atom-u-m5unified
 ; default_envs = m5stack-atoms3
 ; default_envs = m5stack-atoms3r-m5unified
+; default_envs = m5stack-atom-echos3r-m5unified
 ; default_envs = m5stack-atoms3-lite
 ; default_envs = m5stack-atoms3-u
 ; default_envs = m5stack-atoms3-m5unified
