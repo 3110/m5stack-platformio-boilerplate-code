@@ -14,6 +14,7 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5StickC             | env:m5stick-c                                                  | with [the official M5Stack library](https://github.com/m5stack/M5StickC)                                                                                                                                                                                |
 | M5StickC Plus        | env:m5stick-c-plus                                             | with [the official M5Stack library](https://github.com/m5stack/M5StickC-Plus)                                                                                                                                                                           |
 | M5StickC Plus2       | env:m5stick-c-plus2-m5unified                                  | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
+| M5StickS3            | env:m5stick-s3                                                 | the official M5Stack library is missing. <br>with [M5Unified](https://github.com/m5stack/M5Unified) and [M5PM1](https://github.com/m5stack/M5PM1). USB CDC On Boot is enabled.                                                                          |
 | M5ATOM Matrix        | env:m5stack-atom-matrix <br> env:m5stack-atom-matrix-m5unified | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
 | M5ATOM Lite          | env:m5stack-atom-lite <br> env:m5stack-atom-lite-m5unified     | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
 | M5ATOM Echo          | env:m5stack-atom-echo <br> env:m5stack-atom-echo-m5unified     | with [the official M5stack library](https://github.com/m5stack/M5Atom)<br>with [M5Unified](https://github.com/m5stack/M5Unified)                                                                                                                        |
@@ -65,14 +66,15 @@ You can also set the environment by explicitly specifying the `default_envs` in 
 ```platformio.ini
 [platformio]
 default_envs = m5stack-basic
-; default-envs = m5stack-fire
-; default-envs = m5stack-m5go
+; default_envs = m5stack-fire
+; default_envs = m5stack-m5go
 ; default_envs = m5stack-core2
 ; default_envs = m5stack-cores3
 ; default_envs = m5stack-cores3-m5unified
 ; default_envs = m5stick-c
 ; default_envs = m5stick-c-plus
 ; default_envs = m5stick-c-plus2-m5unified
+; default_envs = m5stick-s3
 ; default_envs = m5stack-atom-matrix
 ; default_envs = m5stack-atom-lite
 ; default_envs = m5stack-atom-echo
