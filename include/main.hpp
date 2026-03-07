@@ -130,19 +130,34 @@ inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
 inline void M5_BEGIN(void) {
 }
 #endif
-#elif defined(ARDUINO_M5STACK_NANOC6)
+#elif defined(ARDUINO_M5STACK_NANOC6) || defined(ARDUINO_M5STACK_NANOH2)
+#if defined(ARDUINO_M5STACK_NANOC6)
 #include <M5NanoC6.h>
 #undef M5DEV
-#define M5DEV NanoC6
+#define M5DEV                   NanoC6
+#define M5NANO_BLUE_LED_PIN     M5NANO_C6_BLUE_LED_PIN
+#define M5NANO_RGB_LED_DATA_PIN M5NANO_C6_RGB_LED_DATA_PIN
+#define M5NANO_RGB_LED_PWR_PIN  M5NANO_C6_RGB_LED_PWR_PIN
+#elif defined(ARDUINO_M5STACK_NANOH2)
+#include <Arduino.h>
+#define M5NANO_H2_BLUE_LED_PIN     4
+#define M5NANO_H2_RGB_LED_DATA_PIN 11
+#define M5NANO_H2_RGB_LED_PWR_PIN  10
+#define M5NANO_H2_BTN_A_PIN        9
+#define M5NANO_BLUE_LED_PIN        M5NANO_H2_BLUE_LED_PIN
+#define M5NANO_RGB_LED_DATA_PIN    M5NANO_H2_RGB_LED_DATA_PIN
+#define M5NANO_RGB_LED_PWR_PIN     M5NANO_H2_RGB_LED_PWR_PIN
+#endif
+
 #if defined(USE_BLUE_LED)
 inline void setLED(bool on) {
-    digitalWrite(M5NANO_C6_BLUE_LED_PIN, on ? HIGH : LOW);
+    digitalWrite(M5NANO_BLUE_LED_PIN, on ? HIGH : LOW);
 }
 #endif
 #if defined(USE_RGB_LED)
 #include <Adafruit_NeoPixel.h>
 #define NUM_LEDS 1
-Adafruit_NeoPixel RGB_LED(NUM_LEDS, M5NANO_C6_RGB_LED_DATA_PIN,
+Adafruit_NeoPixel RGB_LED(NUM_LEDS, M5NANO_RGB_LED_DATA_PIN,
                           NEO_GRB + NEO_KHZ800);
 inline void setRGB(uint8_t r, uint8_t g, uint8_t b, bool show = true) {
     RGB_LED.setPixelColor(0, RGB_LED.Color(r, g, b));
@@ -152,14 +167,19 @@ inline void setRGB(uint8_t r, uint8_t g, uint8_t b, bool show = true) {
 }
 #endif
 inline void M5_BEGIN(void) {
+#if defined(ARDUINO_M5STACK_NANOC6)
     M5DEV.begin();
+#elif defined(ARDUINO_M5STACK_NANOH2)
+    pinMode(M5NANO_H2_BTN_A_PIN, INPUT_PULLUP);
+    Serial.begin(115200);
+#endif
 #if defined(USE_RGB_LED)
-    pinMode(M5NANO_C6_RGB_LED_PWR_PIN, OUTPUT);
-    digitalWrite(M5NANO_C6_RGB_LED_PWR_PIN, HIGH);
+    pinMode(M5NANO_RGB_LED_PWR_PIN, OUTPUT);
+    digitalWrite(M5NANO_RGB_LED_PWR_PIN, HIGH);
     RGB_LED.begin();
 #endif
 #if defined(USE_BLUE_LED)
-    pinMode(M5NANO_C6_BLUE_LED_PIN, OUTPUT);
+    pinMode(M5NANO_BLUE_LED_PIN, OUTPUT);
 #endif
 }
 #endif
