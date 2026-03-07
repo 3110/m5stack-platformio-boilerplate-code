@@ -171,7 +171,6 @@ inline void M5_BEGIN(void) {
     M5DEV.begin();
 #elif defined(ARDUINO_M5STACK_NANOH2)
     pinMode(M5NANO_H2_BTN_A_PIN, INPUT_PULLUP);
-    Serial.begin(115200);
 #endif
 #if defined(USE_RGB_LED)
     pinMode(M5NANO_RGB_LED_PWR_PIN, OUTPUT);
