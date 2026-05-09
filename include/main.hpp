@@ -193,23 +193,36 @@ inline void M5_BEGIN(void) {
 #if defined(USE_MODULE_LLM)
 #include <M5ModuleLLM.h>
 #endif
-#if defined(ARDUINO_M5STACK_TAB5)
+#if defined(ARDUINO_M5STACK_TAB5) || \
+    (defined(USE_WIFI) && defined(ARDUINO_M5STACK_STAMPP4))
 #include <WiFi.h>
-#define SDIO2_CLK GPIO_NUM_12
-#define SDIO2_CMD GPIO_NUM_13
-#define SDIO2_D0  GPIO_NUM_11
-#define SDIO2_D1  GPIO_NUM_10
-#define SDIO2_D2  GPIO_NUM_9
-#define SDIO2_D3  GPIO_NUM_8
-#define SDIO2_RST GPIO_NUM_15
+#if defined(ARDUINO_M5STACK_TAB5)
+#define SDIO_CLK GPIO_NUM_12
+#define SDIO_CMD GPIO_NUM_13
+#define SDIO_D0  GPIO_NUM_11
+#define SDIO_D1  GPIO_NUM_10
+#define SDIO_D2  GPIO_NUM_9
+#define SDIO_D3  GPIO_NUM_8
+#define SDIO_RST GPIO_NUM_15
+#endif
+#if defined(ARDUINO_M5STACK_STAMPP4)
+#define SDIO_CLK GPIO_NUM_43
+#define SDIO_CMD GPIO_NUM_44
+#define SDIO_D0  GPIO_NUM_45
+#define SDIO_D1  GPIO_NUM_46
+#define SDIO_D2  GPIO_NUM_47
+#define SDIO_D3  GPIO_NUM_48
+#define SDIO_RST GPIO_NUM_42
+#endif
 #endif
 
 // clang-format on
 inline void M5_BEGIN(m5::M5Unified::config_t& cfg) {
     M5DEV.begin(cfg);
-#if defined(ARDUINO_M5STACK_TAB5)
-    WiFi.setPins(SDIO2_CLK, SDIO2_CMD, SDIO2_D0, SDIO2_D1, SDIO2_D2, SDIO2_D3,
-                 SDIO2_RST);
+#if defined(ARDUINO_M5STACK_TAB5) || \
+    (defined(USE_WIFI) && defined(ARDUINO_M5STACK_STAMPP4))
+    WiFi.setPins(SDIO_CLK, SDIO_CMD, SDIO_D0, SDIO_D1, SDIO_D2, SDIO_D3,
+                 SDIO_RST);
 #endif
 }
 
