@@ -36,6 +36,7 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5NanoC6             | env:m5stack-nanoc6                                             | with [the official M5stack library](https://github.com/m5stack/M5NanoC6) and [pioarduino](https://github.com/pioarduino/platform-espressif32)                                                                                                           |
 | M5NanoH2             | env:m5stack-nanoh2                                             | with [pioarduino](https://github.com/pioarduino/platform-espressif32)                                                                                                                                                                                   |
 | M5Stack Tab5         | env:m5stack-tab5                                               | with [M5Unified](https://github.com/m5stack/M5Unified) and [pioarduino](https://github.com/pioarduino/platform-espressif32).                                                                                                                            |
+| M5Stack Chain DualKey| env:m5stack-chain-dualkey                                      | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
 | M5Stack BASIC w/LLM  | env:m5stack-basic-m5unified-llm                                | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
 | M5Stack Core2 w/LLM  | env:m5stack-core2-m5unified-llm                                | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
 | M5Stack CoreS3 w/LLM | env:m5stack-core3-m5unified-llm                                | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
@@ -107,6 +108,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-nanoc6
 ; default_envs = m5stack-nanoh2
 ; default_envs = m5stack-tab5
+; default_envs = m5stack-chain-dualkey
 
 ; default_envs = m5stack-basic-m5unified-llm
 ; default_envs = m5stack-core2-m5unified-llm
