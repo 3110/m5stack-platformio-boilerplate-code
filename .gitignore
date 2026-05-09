@@ -3,4 +3,4 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
-src/idf_component.yml
+src/idf_component.yml*
