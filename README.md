@@ -148,3 +148,119 @@ lib_deps =
 ### 実機へのアップロード
 
 PlatformIO: Upload（VSCode のステータスバーにある → ボタン）を実行します。
+
+### ファームウェアファイルの生成
+
+この boilerplate には，配布用の merged firmware を生成するための PlatformIO custom target が含まれています。
+
+次のコマンドを実行すると，指定した PlatformIO environment 用のファームウェアファイルを生成できます。
+
+```sh
+pio run -e m5stack-basic -t firmware
+```
+
+VSCode の PlatformIO 拡張機能を使っている場合は、PlatformIO の Project Tasks から対象の environment を選び、**Custom** にある **Generate merged firmware** を実行しても同じファームウェアファイルを生成できます。
+
+これは、次のコマンドを実行するのと同じです。
+
+```sh
+pio run -e <environment> -t firmware
+```
+
+生成されるファームウェアファイルは，デフォルトでは `firmware/` ディレクトリに出力されます。
+
+ファイル名は次の形式になります。
+
+```text
+プロジェクト名_env名_firmware_バージョン.bin
+```
+
+例：
+
+```text
+my_project_m5stack-basic_firmware_0.1.0.bin
+```
+
+プロジェクト名を明示したい場合は，`platformio.ini` の `[env]` セクションで `custom_firmware_name` を指定します。指定しない場合は，プロジェクトディレクトリ名が使用されます。
+
+```ini
+[env]
+custom_firmware_name = my_project
+```
+
+ファームウェアのバージョンは，次の優先順位で決まります。
+
+1. `custom_firmware_version`
+2. `custom_firmware_version_file` と `custom_firmware_version_regex` によるファイルからの抽出
+3. GitHub Actions 実行時の Git tag 名
+4. `dev`
+
+バージョンを直接指定する場合は，次のように設定します。
+
+```ini
+[env]
+custom_firmware_version = 0.1.0
+```
+
+ファイルから正規表現でバージョンを抽出する場合は，次のように設定します。
+
+```ini
+[env]
+custom_firmware_version_file = main.cpp
+custom_firmware_version_regex = "v(\d+\.\d+\.\d+)"
+```
+
+`custom_firmware_version` を指定した場合は，ファイルから抽出する設定よりも優先されます。
+
+### GitHub Actions でファームウェアを生成する
+
+この boilerplate には，GitHub 上でファームウェアをビルドするための GitHub Actions workflow も含まれています。
+
+この workflow は，boilerplate 本体のファームウェアを配布するためというより，この boilerplate から作成された派生プロジェクトが，自分のプロジェクト用ファームウェアを GitHub 上で生成・配布しやすくするためのものです。
+
+使い方は次のとおりです。
+
+1. GitHub の **Actions** タブを開く
+2. **Build merged firmware** workflow を選ぶ
+3. `platformio_envs` にビルドしたい PlatformIO environment 名を JSON 配列で指定する
+4. workflow を実行する
+5. 実行結果から生成された artifact をダウンロードする
+
+たとえば，`m5stack-basic` と `m5stack-atom-matrix` のファームウェアを生成する場合は，次のように指定します。
+
+```json
+["m5stack-basic","m5stack-atom-matrix"]
+```
+
+この場合，GitHub Actions 上で次のようなコマンドが実行されます。
+
+```sh
+pio run -e m5stack-basic -t firmware
+pio run -e m5stack-atom-matrix -t firmware
+```
+
+生成された `.bin` ファイルは，environment ごとに artifact としてアップロードされます。
+
+たとえば `m5stack-basic` の場合，artifact 名は次のようになります。
+
+```text
+firmware-m5stack-basic
+```
+
+artifact をダウンロードすると，その中に次のようなファームウェアファイルが含まれます。
+
+```text
+my_project_m5stack-basic_firmware_0.1.0.bin
+```
+
+派生プロジェクトで標準的にビルドしたい environment が決まっている場合は，`.github/workflows/build-firmware.yml` の `platformio_envs` の `default` を変更してください。
+
+```yaml
+default: '["m5stack-basic"]'
+```
+
+複数の environment を標準にしたい場合は，次のように指定できます。
+
+```yaml
+default: '["m5stack-basic","m5stack-atom-matrix"]'
+```
