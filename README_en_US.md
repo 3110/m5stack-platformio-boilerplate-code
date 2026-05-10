@@ -24,7 +24,7 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5ATOM EchoS3R       | env:m5stack-atom-echos3r-m5unified                             | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
 | M5ATOMS3 Lite        | env:m5stack-atoms3-lite <br> env:m5stack-atoms3-lite-m5unified | with [the official M5Stack library](https://github.com/m5stack/M5AtomS3)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled. |
 | M5ATOMS3 U           | env:m5stack-atoms3-u <br> env:m5stack-atoms3-u-m5unified       | with [the official M5Stack library](https://github.com/m5stack/M5AtomS3)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled. |
-| M5Stack CoreInk      | env:m5stack-core-ink                                           | with [the official M5Stack library](https://github.com/m5stack/M5Core-Ink)                                                                                                                                                                              |
+| M5Stack CoreInk      | env:m5stack-coreink                                            | with [the official M5Stack library](https://github.com/m5stack/M5Core-Ink)                                                                                                                                                                              |
 | M5Stack Paper        | env:m5stack-paper                                              | with [the official M5Stack library](https://github.com/m5stack/M5EPD)                                                                                                                                                                                   |
 | M5Stack PaperS3      | env:m5stack-papers3                                            | the official M5Stack library is missing.<br>with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                     |
 | M5StampS3            | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | the official M5Stack library is missing.<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                         |
@@ -146,3 +146,119 @@ Note: When using `SD.h` or `SPIFFS.h` with M5Unified, make sure to include them 
 ### Upload to Devices
 
 Execute "PlatformIO: Upload" by clicking the right arrow icon located in the VSCode status bar.
+
+### Generating firmware files
+
+This boilerplate includes a PlatformIO custom target for generating a merged firmware image for distribution.
+
+Run the following command to generate firmware for a specific PlatformIO environment.
+
+```sh
+pio run -e m5stack-basic -t firmware
+```
+
+If you are using the PlatformIO extension for VSCode, you can also generate the same firmware file from the PlatformIO Project Tasks view. Select the target environment, then run **Custom** > **Generate merged firmware**.
+
+This is equivalent to running:
+
+```sh
+pio run -e <environment> -t firmware
+```
+
+The generated firmware file is written to the `firmware/` directory by default.
+
+The firmware filename uses the following format:
+
+```text
+project_name_environment_name_firmware_version.bin
+```
+
+Example:
+
+```text
+my_project_m5stack-basic_firmware_0.1.0.bin
+```
+
+To specify the project name used in the firmware filename, set `custom_firmware_name` in the `[env]` section of `platformio.ini`. If omitted, the project directory name is used.
+
+```ini
+[env]
+custom_firmware_name = my_project
+```
+
+The firmware version is resolved in the following order:
+
+1. `custom_firmware_version`
+2. `custom_firmware_version_file` + `custom_firmware_version_regex`
+3. Git tag name when running on GitHub Actions
+4. `dev`
+
+To specify the version directly, use:
+
+```ini
+[env]
+custom_firmware_version = 0.1.0
+```
+
+To extract the version from a file using a regular expression, use:
+
+```ini
+[env]
+custom_firmware_version_file = main.cpp
+custom_firmware_version_regex = "v(\d+\.\d+\.\d+)"
+```
+
+When `custom_firmware_version` is specified, it takes priority over the version extracted from a file.
+
+### Building firmware with GitHub Actions
+
+This boilerplate also includes a GitHub Actions workflow for building firmware on GitHub.
+
+The workflow is mainly intended for projects created from this boilerplate. It allows derived projects to build and distribute their own firmware artifacts on GitHub without requiring users to install PlatformIO locally.
+
+To use it:
+
+1. Open the **Actions** tab on GitHub.
+2. Select the **Build merged firmware** workflow.
+3. Set `platformio_envs` to the PlatformIO environments you want to build, using a JSON array.
+4. Run the workflow.
+5. Download the generated artifacts from the workflow result.
+
+For example, to build firmware for `m5stack-basic` and `m5stack-atom-matrix`, enter:
+
+```json
+["m5stack-basic","m5stack-atom-matrix"]
+```
+
+The workflow will run commands like:
+
+```sh
+pio run -e m5stack-basic -t firmware
+pio run -e m5stack-atom-matrix -t firmware
+```
+
+The generated `.bin` files are uploaded as artifacts for each environment.
+
+For example, the artifact name for `m5stack-basic` will be:
+
+```text
+firmware-m5stack-basic
+```
+
+After downloading the artifact, it will contain a firmware file such as:
+
+```text
+my_project_m5stack-basic_firmware_0.1.0.bin
+```
+
+If a derived project has specific environments that should be built by default, edit `.github/workflows/build-firmware.yml` and change the `default` value of `platformio_envs`.
+
+```yaml
+default: '["m5stack-basic"]'
+```
+
+To build multiple environments by default, use:
+
+```yaml
+default: '["m5stack-basic","m5stack-atom-matrix"]'
+```
