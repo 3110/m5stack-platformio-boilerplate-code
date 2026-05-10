@@ -3,8 +3,8 @@ name: Build merged firmware
 on:
   workflow_dispatch:
     inputs:
-      platformio_env:
-        description: "PlatformIO environment to build"
+      platformio_envs:
+        description: "PlatformIO environments to build as a JSON array"
         required: true
         default: '["m5stack-basic"]'
 
@@ -31,7 +31,7 @@ jobs:
         run: rm -rf firmware && mkdir -p firmware
 
       - name: Build merged firmware
-        run: pio run -e ${{ inputs.platformio_env }} -t firmware
+        run: pio run -e ${{ matrix.platformio_env }} -t firmware
 
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v4
