@@ -1,0 +1,41 @@
+name: Build merged firmware
+
+on:
+  workflow_dispatch:
+    inputs:
+      platformio_env:
+        description: "PlatformIO environment to build"
+        required: true
+        default: '["m5stack-basic"]'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platformio_env: ${{ fromJSON(inputs.platformio_envs) }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: Install PlatformIO
+        run: pip install -U platformio
+
+      - name: Clean firmware directory
+        run: rm -rf firmware && mkdir -p firmware
+
+      - name: Build merged firmware
+        run: pio run -e ${{ inputs.platformio_env }} -t firmware
+
+      - name: Upload firmware artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware-${{ matrix.platformio_env }}
+          path: firmware/*_${{ matrix.platformio_env }}_firmware_*.bin
+          if-no-files-found: error
