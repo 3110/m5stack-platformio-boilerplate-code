@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: firmware-${{ matrix.platformio_env }}
-          path: firmware/*_${{ matrix.platformio_env }}_firmware_*.bin
+          path: firmware/*.bin
           if-no-files-found: error
 
   release:
