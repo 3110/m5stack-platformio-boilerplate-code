@@ -3,8 +3,8 @@ name: Build merged firmware
 on:
   workflow_dispatch:
     inputs:
-      platformio_env:
-        description: "PlatformIO environment to build"
+      platformio_envs:
+        description: "PlatformIO environments to build as a JSON array"
         required: true
         default: '["m5stack-basic"]'
 
