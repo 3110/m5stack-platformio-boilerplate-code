@@ -43,7 +43,7 @@ jobs:
         run: rm -rf firmware && mkdir -p firmware
 
       - name: Build merged firmware
-        run: pio run -e ${{ inputs.platformio_env }} -t firmware
+        run: pio run -e ${{ matrix.platformio_env }} -t firmware
 
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v4
