@@ -28,6 +28,7 @@
 | M5Stack CoreInk      | env:m5stack-coreink                                            | [公式ライブラリ](https://github.com/m5stack/M5Core-Ink)を使用。                                                                                                                                                                        |
 | M5Stack Paper        | env:m5stack-paper                                              | [公式ライブラリ](https://github.com/m5stack/M5EPD)を使用。                                                                                                                                                                             |
 | M5Stack PaperS3      | env:m5stack-papers3                                            | 公式ライブラリはなし。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                                                                   |
+| M5Stack PaperColor   | env:m5stack-papercolor                                         | 公式ライブラリはなし。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                           |
 | M5StampS3            | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | 公式ライブラリはなし。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                           |
 | M5Capsule            | env:m5stack-capsule-m5unified                                  | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                                                     |
 | M5Dial               | env:m5stack-dial <br> env:m5stack-dial-m5unified               | [公式ライブラリ](https://github.com/m5stack/M5Dial)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。<br>[M5Unified](https://github.com/m5stack/M5Unified)を使用。USB CDC On Boot が有効。                            |
@@ -98,6 +99,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-coreink
 ; default_envs = m5stack-paper
 ; default_envs = m5stack-papers3
+; default_envs = m5stack-papercolor
 ; default_envs = m5stack-stamps3
 ; default_envs = m5stack-stamps3-m5unified
 ; default_envs = m5stack-capsule-m5unified
