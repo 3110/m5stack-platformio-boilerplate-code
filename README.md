@@ -5,7 +5,7 @@
 [Arduino IDE](https://www.arduino.cc/en/software) 環境と同じように [PlatformIO IDE](https://platformio.org/platformio-ide) 環境でも `setup()`と`loop()`の中身を書いてすぐにコンパイルして実行できます。
 ## 対応機種
 
-| 機種名               | 環境名                                                        | 備考                                                                                                                                                                                                                                 |
+| 機種名               | 環境名                                                         | 備考                                                                                                                                                                                                                                   |
 | :------------------- | :------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | M5Stack BASIC        | env:m5stack-basic                                              | [公式ライブラリ](https://github.com/m5stack/M5Stack)を使用。                                                                                                                                                                           |
 | M5Stack Fire         | env:m5stack-fire                                               | [公式ライブラリ](https://github.com/m5stack/M5Stack)を使用。                                                                                                                                                                           |
@@ -28,6 +28,7 @@
 | M5Stack CoreInk      | env:m5stack-coreink                                            | [公式ライブラリ](https://github.com/m5stack/M5Core-Ink)を使用。                                                                                                                                                                        |
 | M5Stack Paper        | env:m5stack-paper                                              | [公式ライブラリ](https://github.com/m5stack/M5EPD)を使用。                                                                                                                                                                             |
 | M5Stack PaperS3      | env:m5stack-papers3                                            | 公式ライブラリはなし。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                                                                   |
+| M5Stack PaperColor   | env:m5stack-papercolor                                         | 公式ライブラリはなし。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                           |
 | M5StampS3            | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | 公式ライブラリはなし。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                           |
 | M5Capsule            | env:m5stack-capsule-m5unified                                  | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                                                     |
 | M5Dial               | env:m5stack-dial <br> env:m5stack-dial-m5unified               | [公式ライブラリ](https://github.com/m5stack/M5Dial)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。<br>[M5Unified](https://github.com/m5stack/M5Unified)を使用。USB CDC On Boot が有効。                            |
@@ -35,9 +36,10 @@
 | M5DinMeter           | env:m5stack-din-meter                                          | [公式ライブラリ](https://github.com/m5stack/M5DinMeter)を使用（[M5Unified](https://github.com/m5stack/M5Unified)ベース）。USB CDC On Boot が有効。                                                                                     |
 | M5StampP4            | env:m5stack-stampp4                                            | 公式ライブラリはなし。<br>[M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                                                                   |
 | M5NanoC6             | env:m5stack-nanoc6                                             | [公式ライブラリ](https://github.com/m5stack/M5NanoC6)を使用。プラットフォームは[pioarduino](https://github.com/pioarduino/platform-espressif32)を使用。                                                                                |
-| M5NanoH2             | env:m5stack-nanoh2                                             | プラットフォームは[pioarduino](https://github.com/pioarduino/platform-espressif32)を使用。                                                                                                                                             |
+| M5NanoH2             | env:m5stack-nanoh2                                             | [M5Unified](https://github.com/m5stack/M5Unified) を使用。プラットフォームは[pioarduino](https://github.com/pioarduino/platform-espressif32)を使用。                                                                                   |
 | M5Stack Tab5         | env:m5stack-tab5                                               | [M5Unified](https://github.com/m5stack/M5Unified) を使用。プラットフォームは[pioarduino](https://github.com/pioarduino/platform-espressif32)を使用。                                                                                   |
 | M5Stack Chain DualKey| env:m5stack-chain-dualkey                                      | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                                                     |
+| M5Stack StopWatch    | env:m5stack-stop-watch                                         | [M5Unified](https://github.com/m5stack/M5Unified) を使用。USB CDC On Boot が有効。                                                                                                                                                     |
 | M5Stack BASIC w/LLM  | env:m5stack-basic-m5unified-llm                                | [M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                                                                                             |
 | M5Stack Core2 w/LLM  | env:m5stack-core2-m5unified-llm                                | [M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                                                                                             |
 | M5Stack CoreS3 w/LLM | env:m5stack-cores3-m5unified-llm                               | [M5Unified](https://github.com/m5stack/M5Unified) を使用。                                                                                                                                                                             |
@@ -98,6 +100,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-coreink
 ; default_envs = m5stack-paper
 ; default_envs = m5stack-papers3
+; default_envs = m5stack-papercolor
 ; default_envs = m5stack-stamps3
 ; default_envs = m5stack-stamps3-m5unified
 ; default_envs = m5stack-capsule-m5unified
@@ -110,6 +113,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-nanoh2
 ; default_envs = m5stack-tab5
 ; default_envs = m5stack-chain-dualkey
+; default_envs = m5stack-stop-watch
 
 ; default_envs = m5stack-basic-m5unified-llm
 ; default_envs = m5stack-core2-m5unified-llm

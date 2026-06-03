@@ -27,6 +27,7 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5Stack CoreInk      | env:m5stack-coreink                                            | with [the official M5Stack library](https://github.com/m5stack/M5Core-Ink)                                                                                                                                                                              |
 | M5Stack Paper        | env:m5stack-paper                                              | with [the official M5Stack library](https://github.com/m5stack/M5EPD)                                                                                                                                                                                   |
 | M5Stack PaperS3      | env:m5stack-papers3                                            | the official M5Stack library is missing.<br>with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                     |
+| M5Stack PaperColor   | env:m5stack-papercolor                                         | the official M5Stack library is missing.<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                         |
 | M5StampS3            | env:m5stack-stamps3 <br> env:m5stack-stamps3-m5unified         | the official M5Stack library is missing.<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                         |
 | M5Capsule            | env:m5stack-capsule-m5unified                                  | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
 | M5Dial               | env:m5stack-dial<br>env:m5stack-dial-m5unified                 | with [the official M5Stack library](https://github.com/m5stack/M5Dial)(based on [M5Unified](https://github.com/m5stack/M5Unified))<br>with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                               |
@@ -34,9 +35,10 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 | M5DinMeter           | env:m5stack-din-meter                                          | with [the official M5Stack library](https://github.com/m5stack/M5DinMeter)(based on [M5Unified](https://github.com/m5stack/M5Unified)). USB CDC On Boot is enabled.                                                                                     |
 | M5StampP4            | env:m5stack-stampp4                                            | the official M5Stack library is missing.<br>with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                     |
 | M5NanoC6             | env:m5stack-nanoc6                                             | with [the official M5stack library](https://github.com/m5stack/M5NanoC6) and [pioarduino](https://github.com/pioarduino/platform-espressif32)                                                                                                           |
-| M5NanoH2             | env:m5stack-nanoh2                                             | with [pioarduino](https://github.com/pioarduino/platform-espressif32)                                                                                                                                                                                   |
+| M5NanoH2             | env:m5stack-nanoh2                                             | with [M5Unified](https://github.com/m5stack/M5Unified) and [pioarduino](https://github.com/pioarduino/platform-espressif32).                                                                                                                            |
 | M5Stack Tab5         | env:m5stack-tab5                                               | with [M5Unified](https://github.com/m5stack/M5Unified) and [pioarduino](https://github.com/pioarduino/platform-espressif32).                                                                                                                            |
 | M5Stack Chain DualKey| env:m5stack-chain-dualkey                                      | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
+| M5Stack StopWatch    | env:m5stack-stop-watch                                          | with [M5Unified](https://github.com/m5stack/M5Unified). USB CDC On Boot is enabled.                                                                                                                                                                     |
 | M5Stack BASIC w/LLM  | env:m5stack-basic-m5unified-llm                                | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
 | M5Stack Core2 w/LLM  | env:m5stack-core2-m5unified-llm                                | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
 | M5Stack CoreS3 w/LLM | env:m5stack-core3-m5unified-llm                                | with [M5Unified](https://github.com/m5stack/M5Unified).                                                                                                                                                                                                 |
@@ -97,6 +99,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-coreink
 ; default_envs = m5stack-paper
 ; default_envs = m5stack-papers3
+; default_envs = m5stack-papercolor
 ; default_envs = m5stack-stamps3
 ; default_envs = m5stack-stamps3-m5unified
 ; default_envs = m5stack-capsule-m5unified
@@ -109,6 +112,7 @@ default_envs = m5stack-basic
 ; default_envs = m5stack-nanoh2
 ; default_envs = m5stack-tab5
 ; default_envs = m5stack-chain-dualkey
+; default_envs = m5stack-stop-watch
 
 ; default_envs = m5stack-basic-m5unified-llm
 ; default_envs = m5stack-core2-m5unified-llm
