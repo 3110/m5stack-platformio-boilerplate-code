@@ -1,0 +1,3 @@
+[submodule "m5stack-platformio-ini"]
+	path = config
+	url = https://github.com/3110/m5stack-platformio-ini.git

@@ -46,6 +46,37 @@
 
 ## 事前準備
 
+### クローン方法
+
+このリポジトリはGit submoduleを使用しています。クローンする場合は、次のように `--recurse-submodules` を付けてください。
+
+```sh
+git clone --recurse-submodules https://github.com/3110/m5stack-platformio-boilerplate-code.git
+```
+
+すでに通常の `git clone` を実行した場合は、次のコマンドでsubmoduleを取得できます。
+
+```sh
+git submodule update --init --recursive
+```
+
+### submoduleの更新方法
+
+この方法で取得されるのは、親リポジトリが記録しているsubmoduleのコミットです。
+
+`m5stack-platformio-ini` の最新版を取得したい場合は、次のコマンドを実行します。
+
+```sh
+git submodule update --remote config
+```
+
+更新後は、親リポジトリ側でsubmoduleの参照先をコミットします。
+
+```sh
+git add config
+git commit -m "Update m5stack PlatformIO config"
+```
+
 ### コード整形の設定
 
 コードの整形は`.vscode/settings.json`で`"C_Cpp.clang_format_style": "file"`にしているため，`.clang-format`で設定できます。ご自身の好きな設定に変更してください。

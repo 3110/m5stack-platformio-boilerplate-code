@@ -45,6 +45,37 @@ The Boilerplate Code for M5Stack enables you to compile and execute your code im
 
 ## Preparation
 
+### Cloning
+
+This repository uses a Git submodule. When cloning this repository, add `--recurse-submodules` as follows:
+
+```sh
+git clone --recurse-submodules https://github.com/3110/m5stack-platformio-boilerplate-code.git
+```
+
+If you have already cloned the repository without submodules, you can fetch the submodule with the following command:
+
+```sh
+git submodule update --init --recursive
+```
+
+### Updating the Submodule
+
+The submodule fetched this way is the commit recorded by the parent repository.
+
+If you want to fetch the latest version of `m5stack-platformio-ini`, run the following command:
+
+```sh
+git submodule update --remote config
+```
+
+After updating it, commit the updated submodule reference in the parent repository.
+
+```sh
+git add config
+git commit -m "Update m5stack PlatformIO config"
+```
+
 ### Code Formatter Settings
 
 Since the `"C_Cpp.clang_format_style"` is set to `"file"` in the `.vscode/settings.json`, you can change the code formatter settings to your preferred settings in `.clang-format`.
